@@ -146,7 +146,7 @@ className="relative flex justify-center"
 
                   <div className="text-5xl mb-2">
                      <img
-                     src="/images/j.png"
+                     src="/images/J.png"
                      alt="JupitoData"
                      className="h-14 w-auto"
                      />
