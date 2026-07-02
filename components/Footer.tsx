@@ -29,7 +29,7 @@ export default function Footer() {
             </h2>
 
             <p className="text-gray-400 mt-6 leading-8">
-              Delivering verified B2B context data, lead generation,
+              Delivering verified B2B contact data, lead generation,
               LinkedIn research and custom business intelligence
               solutions worldwide.
             </p>

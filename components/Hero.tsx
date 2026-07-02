@@ -50,7 +50,7 @@ export default function Hero() {
               <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
 
               <span className="text-sm tracking-wider text-orange-300 uppercase">
-                Verified B2B Contacts - Custom Search
+                Verified B2B Contacts - Custom Research
               </span>
 
             </div>
@@ -79,7 +79,7 @@ export default function Hero() {
 
             <p className="mt-8 text-slate-300 text-xl leading-9 max-w-xl">
 
-              Verified B2B context data, lead generation,
+              Verified B2B contact data, lead generation,
               LinkedIn research, company profiling,
               email discovery and custom B2B
               research trusted by businesses worldwide.

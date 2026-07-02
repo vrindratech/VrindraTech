@@ -57,9 +57,9 @@ ABOUT JUPITODATA
 {/* Heading */}
 
 <h2 className="mt-8 text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
-  Trusted
+  Your Custom
   <span className="block text-orange-500">
-    B2B Growth
+    B2B Research
   </span>
   Partner
 </h2>
@@ -145,7 +145,11 @@ className="relative flex justify-center"
                 >
 
                   <div className="text-5xl mb-2">
-                    🌐
+                     <img
+                     src="/images/j.png"
+                     alt="JupitoData"
+                     className="h-14 w-auto"
+                     />
                   </div>
 
                   <h3 className="text-white text-2xl font-bold text-center">
@@ -153,7 +157,7 @@ className="relative flex justify-center"
                   </h3>
 
                   <p className="text-orange-100 text-sm text-center">
-                  Verified Business Data
+                  Verified B2B Data
                   </p>
 
                 </motion.div>
