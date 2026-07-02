@@ -144,19 +144,7 @@ export default function Services() {
 
                 {/* Button */}
 
-                <div className="mt-8">
-
-                  <span className="inline-flex items-center gap-2 text-orange-500 font-semibold">
-
-                    Learn More
-
-                    <span className="group-hover:translate-x-2 transition duration-300">
-
-                      →
-
-                    </span>
-
-                  </span>
+                <div className="mt-4">
 
                 </div>
 

@@ -1,30 +1,32 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
 
 const navLinks = [
   {
     name: "Home",
-    href: "/#home",
+    href: "#home",
   },
   {
     name: "About",
-    href: "/#about",
+    href: "#about",
   },
   {
     name: "Services",
-    href: "/#services",
+    href: "#services",
   },
+  // {
+  //   name: "Industries",
+  //   href: "#industries",
+  // },
   {
     name: "Testimonials",
-    href: "/#testimonials",
+    href: "#testimonials",
   },
   {
     name: "Contact",
-    href: "/#contact",
+    href: "#contact",
   },
 ];
 
@@ -33,103 +35,83 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white shadow-md"
+          ? "bg-white shadow-lg"
           : "bg-white/80 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto h-20 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
 
-        {/* Logo */}
-
-        <Link href="/" className="flex items-center">
-          <Image
+        <div className="flex items-center gap-3">
+          <img
             src="/images/logo.png"
             alt="JupitoData"
-            width={180}
-            height={60}
-            priority
-            className="h-12 md:h-14 w-auto object-contain"
+            className="h-19 w-auto"
           />
-        </Link>
-
-        {/* Desktop Navigation */}
-
-        <nav className="hidden lg:flex items-center gap-10">
-
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-gray-700 font-medium hover:text-orange-500 transition duration-300"
-            >
-              {item.name}
-            </Link>
-          ))}
-
-        </nav>
-
-        {/* Desktop CTA */}
-
-        <div className="hidden lg:block">
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center rounded-full bg-orange-500 hover:bg-orange-600 px-6 py-3 text-white font-semibold transition"
-          >
-            Get Free Data Sample
-          </Link>
         </div>
 
-        {/* Mobile Button */}
+        <nav className="hidden lg:flex gap-10 font-medium">
+
+  {navLinks.map((item) => (
+
+    <a
+      key={item.name}
+      href={item.href}
+      className="text-gray-700 hover:text-orange-500 transition duration-300"
+    >
+      {item.name}
+    </a>
+
+  ))}
+
+  </nav>
+
+        <a
+          href="#contact"
+        className="hidden lg:flex items-center justify-center bg-orange-500 hover:bg-orange-600 transition text-white px-6 py-3 rounded-full font-semibold"
+          >
+           Get Free Data Sample
+        </a>
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden text-3xl text-gray-800"
+          className="lg:hidden text-3xl"
         >
           {menuOpen ? <HiX /> : <HiOutlineMenuAlt3 />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-
-      <div
-        className={`lg:hidden overflow-hidden transition-all duration-300 ${
-          menuOpen ? "max-h-screen" : "max-h-0"
-        }`}
-      >
-        <div className="bg-white border-t px-6 py-6 flex flex-col gap-5 shadow-lg">
-
+      {menuOpen && (
+        <div className="lg:hidden bg-white px-6 pb-6 flex flex-col gap-5">
           {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className="text-gray-700 font-medium hover:text-orange-500 transition"
-            >
-              {item.name}
-            </Link>
-          ))}
 
-          <Link
-            href="/#contact"
-            onClick={() => setMenuOpen(false)}
-            className="mt-2 rounded-full bg-orange-500 hover:bg-orange-600 text-white py-3 text-center font-semibold transition"
-          >
-            Get Free Data Sample
-          </Link>
+  <a
+    key={item.name}
+    href={item.href}
+    onClick={() => setMenuOpen(false)}
+    className="text-gray-700 hover:text-orange-500 transition"
+  >
+    {item.name}
+  </a>
 
+))}
+          <a
+  href="#contact"
+  onClick={() => setMenuOpen(false)}
+  className="bg-orange-500 text-white py-3 rounded-xl text-center font-semibold"
+>
+  Get Free Data Sample
+</a>
         </div>
-      </div>
+      )}
     </header>
   );
 }

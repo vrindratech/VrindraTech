@@ -23,10 +23,14 @@ export default function Footer() {
           {/* Company */}
 
           <div>
+             <h2 className="text-3xl font-bold text-orange-500">
+            <img
+            src="/images/logo.png"
+            alt="JupitoData"
+            className="h-19 w-auto"
+              />   
+             </h2>
 
-            <h2 className="text-3xl font-bold text-orange-500">
-              JupitoData
-            </h2>
 
             <p className="text-gray-400 mt-6 leading-8">
               Delivering verified B2B contact data, lead generation,
