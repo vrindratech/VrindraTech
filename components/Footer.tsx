@@ -25,7 +25,7 @@ export default function Footer() {
           <div>
              <h2 className="text-3xl font-bold text-orange-500">
             <img
-            src="/images/logo.png"
+            src="/images/whitelogo.png"
             alt="JupitoData"
             className="h-19 w-auto"
               />   
