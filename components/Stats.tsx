@@ -11,7 +11,7 @@ const stats = [
   },
   {
     icon: <FaChartLine size={32} />,
-    value: "95%+",
+    value: "Pinpoint",
     title: "Accuracy",
   },
     {

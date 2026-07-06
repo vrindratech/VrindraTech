@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   FaDatabase,
   FaUsers,
@@ -143,7 +144,19 @@ export default function Services() {
                 </p>
 
                 {/* Button */}
+                <div className="mt-8">
 
+                 <Link
+                 href="/services"
+                 className="inline-flex items-center gap-2 text-orange-500 font-semibold group hover:text-orange-600 transition"
+                  >
+                 Learn More
+
+                <span className="group-hover:translate-x-2 transition duration-300">
+                  →
+                 </span>
+                </Link>
+                  </div>
                 <div className="mt-4">
 
                 </div>

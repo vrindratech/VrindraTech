@@ -135,7 +135,7 @@ export default function Hero() {
 
                 <FaCheckCircle className="text-orange-500" />
 
-                95%+ Data Accuracy
+                Tailored to Your Requirement
 
               </div>
 
@@ -143,7 +143,14 @@ export default function Hero() {
 
                 <FaCheckCircle className="text-orange-500" />
 
-                24–48 Hour Delivery
+                Build From Scratch
+
+              </div>
+              <div className="flex items-center gap-3 text-white">
+
+                <FaCheckCircle className="text-orange-500" />
+
+                Fast Turnaround Based on Project Size
 
               </div>
 
@@ -174,13 +181,13 @@ export default function Hero() {
 
               <h3 className="text-5xl font-bold text-orange-500">
 
-                95%+
+                Human
 
               </h3>
 
               <p className="text-gray-600 mt-2">
 
-                Verified Accuracy
+                Verified Data
 
               </p>
 
@@ -299,10 +306,10 @@ export default function Hero() {
 
                       <div>
                         <h3 className="text-2xl font-bold text-white">
-                          95%+
+                          Fast
                         </h3>
                         <p className="text-slate-400 text-sm">
-                          Data Accuracy
+                          Turnaround
                         </p>
                       </div>
 
