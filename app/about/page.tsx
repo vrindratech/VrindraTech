@@ -429,7 +429,7 @@ export default function AboutPage() {
 
   <div className="rounded-2xl bg-white p-8 shadow-lg border border-orange-100 text-center">
     <h3 className="text-3xl font-bold text-orange-500">Fast Turnaround</h3>
-    <p className="mt-3 text-slate-600">Fast turnaround without compromising quality. Most standard projects are delivered within 48 hours.</p>
+    <p className="mt-3 text-slate-600">Fast turnaround without compromising quality. Most standard projects are delivered within timeline confirmed based on project size and requirements.</p>
   </div>
 
   <div className="rounded-2xl bg-white p-8 shadow-lg border border-orange-100 text-center">

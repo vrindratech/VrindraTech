@@ -10,7 +10,7 @@ export default function About() {
   "LinkedIn Research",
   "Email Discovery",
   "Company Profiling",
-  "Market Research",
+  "Data Enrichment",
 ];
 
   return (
@@ -235,7 +235,7 @@ className="relative flex justify-center"
                 <div className="text-2xl mb-2">📊</div>
 
                 <h4 className="font-semibold text-slate-900">
-                  Market Research
+                  Data Enrichment
                 </h4>
 
                 <p className="text-sm text-slate-500">

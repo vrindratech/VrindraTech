@@ -28,9 +28,9 @@ const services = [
 
 const trustBadges = [
   "Human Verified",
-  "98% Accuracy",
+  "Custom Build",
   "GDPR Compliant",
-  "24–48 Hr Delivery",
+  "Quality Assured",
 ];
 
 export default function Contact() {

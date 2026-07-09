@@ -278,9 +278,9 @@ export default function PrivacyPolicyPage() {
     <p className="text-gray-600 leading-8">
 
       When you contact JupitoData or use our services,
-      we may collect personal and business information
-      that helps us respond to your enquiry.
-
+      we may collect limited personal information - such as your name and business email address
+      along with relevent business information solely to respond to your enquiry and provide our services.
+      
     </p>
 
     <ul className="mt-8 space-y-4">
