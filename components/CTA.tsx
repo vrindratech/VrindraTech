@@ -12,6 +12,7 @@ import {
   FaBuilding,
   FaChevronDown,
   FaCheckCircle,
+  FaLinkedin
 } from "react-icons/fa";
 
 const services = [
@@ -195,6 +196,28 @@ export default function Contact() {
                   </h3>
                 </div>
               </motion.a>
+
+               {/* LINKEDIN */}
+
+<motion.a
+  href="https://www.linkedin.com/company/jupitodata/"
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ x: 8 }}
+  className="group flex items-center gap-5 rounded-2xl bg-white p-5 shadow-lg transition hover:shadow-xl"
+>
+  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100">
+                  <FaLinkedin size={22} className="text-orange-500" />
+                </div>
+
+  <div>
+    <p className="text-gray-500">LinkedIn</p>
+
+    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0077B5] transition">
+      linkedin.com/company/jupitodata
+    </h3>
+  </div>
+</motion.a>
 
               {/* Location */}
 

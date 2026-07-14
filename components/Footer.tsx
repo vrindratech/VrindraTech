@@ -1,15 +1,12 @@
 "use client";
 
 import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-  FaTwitter,
   FaPhoneAlt,
   FaEnvelope,
   FaMapMarkerAlt,FaWhatsapp, FaCopy
 } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-slate-950 text-white ">
@@ -234,21 +231,65 @@ export default function Footer() {
 </div>
             {/* Social Icons */}
 
-            <div className="flex gap-4 mt-8">
+      <div className="flex gap-4 mt-8">
 
-              {[FaFacebookF, FaLinkedinIn, FaTwitter, FaInstagram].map(
-                (Icon, index) => (
-                  <div
-                    key={index}
-                    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-orange-500 flex items-center justify-center cursor-pointer transition"
-                  >
-                    <Icon />
-                  </div>
-                )
-              )}
+  <a
+   // href="https://facebook.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
+  >
+    <Image
+      src="/images/facebook.svg"
+      alt="Facebook"
+      width={44}
+      height={44}
+    />
+  </a>
 
-            </div>
+  <a
+    href="https://www.linkedin.com/company/jupitodata/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
+  >
+    <img
+      src="/images/linkedin.svg"
+      alt="LinkedIn"
+      width={44}
+      height={44}
+    />
+  </a>
 
+  <a
+   // href="https://x.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
+  >
+    <Image
+      src="/images/x.jpg"
+      alt="X"
+      width={44}
+      height={44}
+    />
+  </a>
+
+  <a
+  //  href="https://instagram.com/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
+  >
+    <Image
+      src="/images/instagram.svg"
+      alt="Instagram"
+      width={44}
+      height={44}
+    />
+  </a>
+
+</div>
           </div>
 
         </div>

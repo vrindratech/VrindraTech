@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaArrowLeft, FaArrowRight, FaChevronRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight, FaChevronRight, FaLinkedin } from "react-icons/fa";
 import Footer from "@/components/Footer";
 
 export default function AboutPage() {
@@ -274,7 +274,33 @@ export default function AboutPage() {
     Every competitor was contacting the exact same prospects at the exact
     same time.
   </p>
+<div className="flex justify-end mt-12">
+  <div className="text-right">
 
+    <p className="text-sm uppercase tracking-widest text-orange-500 font-semibold">
+      Founder
+    </p>
+
+    <h3 className="mt-2 text-2xl font-bold text-slate-900">
+      Mitesh Bourashi
+    </h3>
+
+    <p className="text-gray-500">
+      Founder & CEO, JupitoData
+    </p>
+
+    <a
+      href="https://www.linkedin.com/in/miteshbourashi/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="mt-4 inline-flex items-center gap-2 text-[#0077B5] font-medium hover:underline hover:text-[#005582] transition"
+    >
+      <FaLinkedin className="text-lg" />
+      Connect on LinkedIn
+    </a>
+
+  </div>
+</div>
   <div className="mt-10 rounded-2xl bg-orange-50 border border-orange-200 p-8">
 
     <h3 className="text-2xl font-bold text-orange-600">
