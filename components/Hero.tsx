@@ -143,7 +143,7 @@ export default function Hero() {
 
                 <FaCheckCircle className="text-orange-500" />
 
-                Build From Scratch
+                Built From Scratch
 
               </div>
               <div className="flex items-center gap-3 text-white">

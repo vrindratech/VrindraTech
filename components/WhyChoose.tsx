@@ -19,7 +19,7 @@ const features = [
   {
     icon: FaClock,
     title: "Fast Turnaround",
-    desc: "Receive your customized database within 24–48 hours.",
+    desc: "Timeline confirmed based on project size.",
   },
   {
     icon: FaShieldAlt,

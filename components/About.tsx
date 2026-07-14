@@ -239,7 +239,7 @@ className="relative flex justify-center"
                 </h4>
 
                 <p className="text-sm text-slate-500">
-                  Industry Insights
+                  Enrich & Validate Records
                 </p>
 
               </motion.div>

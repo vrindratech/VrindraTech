@@ -39,7 +39,7 @@ export default function Trusted() {
           </span>
 
           <h2 className="mt-4 text-4xl lg:text-5xl font-bold text-slate-900">
-            Market We Serve
+            Markets We Serve
           </h2>
           <h2 className="mt-4 text-4xl lg:text-3xl font-bold text-orange-500">
             5+ Countries
