@@ -973,7 +973,7 @@ export default function ServicesSection() {
                 transition={{
                   duration: 28,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: [0, 0, 1, 1],
                 }}
                 className="
                   absolute
@@ -992,7 +992,7 @@ export default function ServicesSection() {
                 transition={{
                   duration: 40,
                   repeat: Infinity,
-                  ease: "linear",
+                  ease: [0, 0, 1, 1],
                 }}
                 className="
                   absolute
@@ -1013,7 +1013,7 @@ export default function ServicesSection() {
                 transition={{
                   duration: 4,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
                   absolute
@@ -1057,7 +1057,7 @@ export default function ServicesSection() {
                     transition={{
                       duration: 8,
                       repeat: Infinity,
-                      ease: "easeInOut",
+                      ease: [0.22, 1, 0.36, 1],
                     }}
                     className="
                       absolute
@@ -1165,7 +1165,7 @@ export default function ServicesSection() {
       transition={{
         duration: 12,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="
         absolute
@@ -1188,7 +1188,7 @@ export default function ServicesSection() {
       transition={{
         duration: 15,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="
         absolute
@@ -1210,7 +1210,7 @@ export default function ServicesSection() {
       transition={{
         duration: 10,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="
         absolute
@@ -1847,7 +1847,7 @@ export default function ServicesSection() {
         transition={{
           duration: 7,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="
           absolute
@@ -2011,12 +2011,12 @@ export default function ServicesSection() {
         <div className="pointer-events-none absolute inset-0 overflow-hidden">
           <motion.div
             animate={{ x: [0, 50, 0], y: [0, -30, 0] }}
-            transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 12, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
             className="absolute -left-48 top-20 h-[500px] w-[500px] rounded-full bg-blue-600/10 blur-[150px]"
           />
           <motion.div
             animate={{ x: [0, -50, 0], y: [0, 40, 0] }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 15, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
             className="absolute -right-48 top-1/3 h-[500px] w-[500px] rounded-full bg-violet-600/10 blur-[150px]"
           />
           <div className="absolute bottom-0 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-cyan-500/5 blur-[150px]" />
@@ -2244,7 +2244,7 @@ export default function ServicesSection() {
                 <motion.div
                   initial={{ scaleX: 0 }}
                   animate={{ scaleX: isOpen ? 1 : 0 }}
-                  transition={{ duration: 0.45, ease: "easeOut" }}
+                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                   className={`absolute inset-x-0 top-0 h-[2px] origin-left bg-gradient-to-r ${theme.icon}`}
                 />
 
@@ -2884,7 +2884,7 @@ function AnimatedPath({
         transition={{
           duration: 1.4,
           delay: 0.3,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
       />
 
@@ -2902,7 +2902,7 @@ function AnimatedPath({
         transition={{
           duration: 2.5,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
       />
 
@@ -2936,7 +2936,7 @@ function FlowingBackground() {
           transition={{
             duration: 12,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
         />
 
@@ -2951,7 +2951,7 @@ function FlowingBackground() {
           transition={{
             duration: 14,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
         />
 

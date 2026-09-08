@@ -11,7 +11,7 @@ export default function GlassOrb() {
       transition={{
         duration: 12,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="absolute right-0 top-20"
     >

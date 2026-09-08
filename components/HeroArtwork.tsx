@@ -15,7 +15,7 @@ export default function HeroArtwork() {
   }}
   transition={{
     duration: 0.8,
-    ease: "easeOut",
+    ease: [0.22, 1, 0.36, 1],
   }}
   className="relative flex h-[650px] w-[650px] items-center justify-center"
   style={{ perspective: "1600px" }}
@@ -255,7 +255,7 @@ export default function HeroArtwork() {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="absolute left-6 top-16 h-44 w-36 rounded-[28px] border border-white/40 bg-white/10 backdrop-blur-3xl shadow-[0_20px_60px_rgba(99,102,241,.18)]"
       >
@@ -304,7 +304,7 @@ export default function HeroArtwork() {
         transition={{
           duration: 7,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="absolute right-8 bottom-16 h-32 w-32 rounded-[24px] border border-white/40 bg-gradient-to-br from-indigo-400/20 to-blue-400/10 backdrop-blur-3xl shadow-[0_25px_60px_rgba(79,70,229,.20)]"
       >
@@ -340,7 +340,7 @@ export default function HeroArtwork() {
         transition={{
           duration: 5,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="absolute right-20 top-14 h-10 w-10 rounded-full border border-white/40 bg-gradient-to-br from-cyan-300/60 to-blue-500/40 backdrop-blur-xl shadow-[0_10px_30px_rgba(59,130,246,.35)]"
       />
@@ -355,7 +355,7 @@ export default function HeroArtwork() {
         transition={{
           duration: 6,
           repeat: Infinity,
-          ease: "easeInOut",
+          ease: [0.22, 1, 0.36, 1],
         }}
         className="absolute bottom-24 left-16 h-6 w-6 rounded-full bg-gradient-to-br from-violet-400 to-indigo-500 shadow-[0_10px_25px_rgba(139,92,246,.5)]"
       />

@@ -437,7 +437,7 @@ export default function Testimonials() {
           }}
           transition={{
             duration: 0.7,
-            ease: "easeOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
           className="px-6 text-center"
         >
@@ -534,7 +534,7 @@ export default function Testimonials() {
           transition={{
             duration: 0.8,
             delay: 0.15,
-            ease: "easeOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
           className="
             mt-16

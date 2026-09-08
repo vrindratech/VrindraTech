@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   ArrowLeft,
   ArrowRight,
@@ -188,16 +188,16 @@ const projects = [
   },
 ];
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 35,
+    y: 30,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.8,
       ease: [0.22, 1, 0.36, 1],
     },
   },
@@ -220,11 +220,11 @@ export default function About() {
               y: [0, -25, 20, 0],
               scale: [1, 1.08, 0.96, 1],
             }}
-            transition={{
-              duration: 16,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+              transition={{
+                duration: 16,
+                repeat: Infinity,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             className="absolute right-[5%] top-[8%] h-[500px] w-[500px] rounded-full bg-blue-500/[0.09] blur-[120px]"
           />
 
@@ -234,11 +234,11 @@ export default function About() {
               y: [0, 25, -15, 0],
               scale: [1, 0.95, 1.08, 1],
             }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
+              transition={{
+                duration: 18,
+                repeat: Infinity,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             className="absolute bottom-[0] right-[20%] h-[450px] w-[450px] rounded-full bg-violet-500/[0.09] blur-[130px]"
           />
 
@@ -394,7 +394,7 @@ export default function About() {
               transition={{
                 duration: 5.5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute right-[8%] top-[18%] h-[380px] w-[380px] rounded-full bg-indigo-500/20 blur-[90px] sm:h-[450px] sm:w-[450px]"
             />
@@ -409,7 +409,7 @@ export default function About() {
               transition={{
                 duration: 7,
                 repeat: Infinity,
-                ease: "easeInOut",
+                  ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute bottom-[8%] left-[12%] h-28 w-28 rounded-full bg-blue-400/10 blur-3xl"
             />
@@ -423,7 +423,7 @@ export default function About() {
               transition={{
                 duration: 6,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="relative z-10 w-full max-w-[760px]"
             >
@@ -444,7 +444,7 @@ export default function About() {
               transition={{
                 duration: 5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute right-[7%] top-[13%] z-20 h-11 w-11 rounded-2xl bg-gradient-to-br from-blue-500/30 to-violet-500/30 shadow-lg shadow-blue-500/10 backdrop-blur-sm"
             />
@@ -457,7 +457,7 @@ export default function About() {
               transition={{
                 duration: 4.5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                  ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute bottom-[12%] right-[10%] z-20 h-7 w-7 rounded-full bg-blue-400/30"
             />
@@ -792,7 +792,7 @@ export default function About() {
           transition={{
             duration: 18,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
           className="pointer-events-none absolute -right-32 top-0 h-[430px] w-[430px] rounded-full bg-blue-500/[0.08] blur-[120px]"
         />
@@ -807,7 +807,7 @@ export default function About() {
           transition={{
             duration: 21,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: [0.22, 1, 0.36, 1],
           }}
           className="pointer-events-none absolute -left-48 bottom-0 h-[400px] w-[400px] rounded-full bg-violet-500/[0.07] blur-[125px]"
         />
@@ -1278,7 +1278,7 @@ export default function About() {
             transition={{
               duration: 6,
               repeat: Infinity,
-              ease: "easeInOut",
+              ease: [0.22, 1, 0.36, 1],
             }}
             className="absolute right-[8%] top-[20%] hidden h-24 w-24 rotate-12 rounded-[25px] border border-white/10 bg-gradient-to-br from-blue-500/30 to-violet-500/30 backdrop-blur-md lg:block"
           />
@@ -1475,7 +1475,7 @@ function TechMarquee({
         animate={{
           x: direction === "left" ? ["0%", "-33.333333%"] : ["-33.333333%", "0%"],
         }}
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
+        transition={{ duration, repeat: Infinity, ease: [0, 0, 1, 1] }}
       >
         {repeatedItems.map((tech, index) => {
           const Icon = tech.icon;

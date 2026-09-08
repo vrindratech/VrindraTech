@@ -79,7 +79,7 @@ export default function ServiceItem({
           transition={{
             duration: 20,
             repeat: Infinity,
-            ease: "linear",
+            ease: [0, 0, 1, 1],
           }}
           className="
           absolute

@@ -154,7 +154,7 @@ export default function FeaturedProjects() {
                 initial={{ opacity: 0, scale: 0.96, y: 30 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative"
               >
                 <div className="absolute -inset-3 rounded-[30px] bg-gradient-to-r from-blue-400/30 via-cyan-400/25 to-violet-400/30 opacity-70 blur-xl transition duration-700 group-hover:opacity-100" />
@@ -454,7 +454,7 @@ function PortfolioHero() {
             y: [0, -20, 25, 0],
             scale: [1, 1.08, 0.96, 1],
           }}
-          transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 14, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
           className="absolute right-[8%] top-[12%] h-[420px] w-[420px] rounded-full bg-blue-500/10 blur-[110px]"
         />
 
@@ -464,7 +464,7 @@ function PortfolioHero() {
             y: [0, 25, -20, 0],
             scale: [1, 0.94, 1.08, 1],
           }}
-          transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 16, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
           className="absolute bottom-[2%] right-[18%] h-[360px] w-[360px] rounded-full bg-violet-500/10 blur-[120px]"
         />
 
@@ -474,7 +474,7 @@ function PortfolioHero() {
 
         <motion.div
           animate={{ x: ["-5%", "5%", "-5%"] }}
-          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 12, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
           className="absolute bottom-[-100px] left-[-10%] h-48 w-[120%] rounded-[50%] border-t border-blue-200/60 bg-gradient-to-r from-transparent via-blue-100/30 to-violet-100/40"
         />
       </div>
@@ -623,19 +623,19 @@ function PortfolioHero() {
           <div className="relative flex min-h-[500px] items-center justify-center lg:min-h-[650px]">
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 32, repeat: Infinity, ease: [0, 0, 1, 1] }}
               className="absolute h-[390px] w-[390px] rounded-full border border-blue-200/60 md:h-[520px] md:w-[520px]"
             />
 
             <motion.div
               animate={{ rotate: -360 }}
-              transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 24, repeat: Infinity, ease: [0, 0, 1, 1] }}
               className="absolute h-[300px] w-[500px] rounded-[50%] border border-violet-200/50 md:h-[380px] md:w-[620px]"
             />
 
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 42, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 42, repeat: Infinity, ease: [0, 0, 1, 1] }}
               className="absolute h-[440px] w-[280px] rounded-[50%] border border-blue-100/70 md:h-[600px] md:w-[380px]"
             />
 
@@ -644,7 +644,7 @@ function PortfolioHero() {
                 scale: [1, 1.08, 1],
                 opacity: [0.35, 0.55, 0.35],
               }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 4, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
               className="absolute h-64 w-64 rounded-full bg-blue-500/20 blur-[80px]"
             />
 
@@ -657,7 +657,7 @@ function PortfolioHero() {
                 y: {
                   duration: 5,
                   repeat: Infinity,
-                  ease: "easeInOut",
+                  ease: [0.22, 1, 0.36, 1],
                 },
               }}
               className="relative z-10"
@@ -691,13 +691,13 @@ function PortfolioHero() {
 
             <motion.div
               animate={{ y: [0, -18, 0], rotate: [0, 8, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 6, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
               className="absolute bottom-[15%] left-[12%] z-20 h-10 w-10 rotate-12 rounded-lg bg-gradient-to-br from-indigo-500 to-violet-600 shadow-[0_15px_35px_-10px_rgba(79,70,229,0.6)]"
             />
 
             <motion.div
               animate={{ y: [0, -20, 0], x: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+              transition={{ duration: 5, repeat: Infinity, ease: [0.22, 1, 0.36, 1] }}
               className="absolute right-[8%] top-[17%] z-20 h-12 w-12 rounded-full bg-gradient-to-br from-blue-400 to-violet-600 shadow-[0_15px_35px_-8px_rgba(79,70,229,0.55)]"
             />
           </div>
@@ -727,7 +727,7 @@ function FloatingParticle({
         duration: 4,
         delay,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className={`absolute ${className} ${size} rounded-full bg-gradient-to-br from-blue-400 to-violet-500 shadow-lg shadow-blue-500/20`}
     />
@@ -750,7 +750,7 @@ function CubePiece({
         duration: 3,
         delay,
         repeat: Infinity,
-        ease: "easeInOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className={`relative overflow-hidden rounded-[12px] border ${
         dark ? "border-white/10" : "border-blue-100"
@@ -794,7 +794,7 @@ function ProjectCard({
       }}
       transition={{
         duration: 0.75,
-        ease: "easeOut",
+        ease: [0.22, 1, 0.36, 1],
       }}
       className="sticky top-8"
       style={{

@@ -650,7 +650,7 @@ export default function OurWork() {
     }}
     transition={{
       duration: 0.7,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     }}
     className="
       group

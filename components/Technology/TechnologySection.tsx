@@ -166,7 +166,7 @@ const technologyCategories = [
 ];
 
 export default function TechnologySection() {
-  const [open, setOpen] = useState(null);
+  const [open, setOpen] = useState<string | null>(null);
 
   return (
     <section
@@ -481,7 +481,7 @@ export default function TechnologySection() {
                       }}
                       transition={{
                         duration: 0.35,
-                        ease: "easeInOut",
+                        ease: [0.22, 1, 0.36, 1],
                       }}
                       className="overflow-hidden"
                     >

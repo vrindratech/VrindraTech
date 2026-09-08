@@ -297,7 +297,7 @@ export default function WhyJupitodata() {
               transition={{
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute h-[330px] w-[330px] rounded-full bg-blue-100 blur-3xl"
             />
@@ -311,7 +311,7 @@ export default function WhyJupitodata() {
               transition={{
                 duration: 5,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="relative z-10 w-full max-w-[570px]"
             >

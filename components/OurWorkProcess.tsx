@@ -304,7 +304,7 @@ export default function ProjectDevelopmentProcess() {
             transition={{
               duration: 7,
               repeat: Infinity,
-              ease: "linear",
+              ease: [0, 0, 1, 1],
             }}
             className="
               absolute
@@ -351,7 +351,7 @@ export default function ProjectDevelopmentProcess() {
                   duration: 3,
                   repeat: Infinity,
                   delay: index * 0.4,
-                  ease: "easeInOut",
+                  ease: [0.22, 1, 0.36, 1],
                 }}
                 className="
                   h-3

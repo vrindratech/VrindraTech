@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import GradientBorder from "@/components/ui/GradientBorder";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import {
   ArrowRight,
@@ -20,7 +20,7 @@ import HeroArtwork from "./HeroArtwork";
    ANIMATIONS
 ========================================================= */
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
@@ -30,12 +30,12 @@ const fadeUp = {
     y: 0,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
 
-const fadeLeft = {
+const fadeLeft: Variants = {
   hidden: {
     opacity: 0,
     x: 70,
@@ -45,7 +45,7 @@ const fadeLeft = {
     x: 0,
     transition: {
       duration: 1,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   },
 };
@@ -333,7 +333,7 @@ export default function Hero() {
   transition={{
     duration: 8,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: [0.22, 1, 0.36, 1],
   }}
   className="relative translate-x-12 -translate-y-30"
 >
