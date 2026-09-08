@@ -1959,7 +1959,7 @@ export default function ServicesSection() {
       </p>
 
       <motion.a
-        href="#contact"
+        href="/#contact"
         whileHover={{
           scale: 1.04,
         }}
@@ -2683,7 +2683,7 @@ export default function ServicesSection() {
           </p>
 
           <a
-            href="#contact"
+            href="/#contact"
             className="
               mt-2
               inline-flex

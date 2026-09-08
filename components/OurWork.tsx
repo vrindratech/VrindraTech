@@ -820,7 +820,7 @@ export default function OurWork() {
       <div className="mt-2">
 
         <Link
-          href="/contact"
+          href="/#contact"
           className="
             inline-flex
             items-center

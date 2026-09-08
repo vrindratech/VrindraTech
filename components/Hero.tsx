@@ -241,65 +241,68 @@ export default function Hero() {
               variants={fadeUp}
               className="mt-6 flex flex-wrap gap-5"
             >
-              <motion.button
-                whileHover={{
-                  scale: 1.05,
-                  y: -3,
-                }}
-                whileTap={{
-                  scale: 0.97,
-                }}
-                className="
-                  group
-                  flex
-                  h-16
-                  items-center
-                  gap-4
-                  rounded-2xl
-                  bg-gradient-to-r
-                  from-indigo-600
-                  via-blue-600
-                  to-violet-500
-                  px-8
-                  text-lg
-                  font-semibold
-                  text-white
-                  shadow-[0_18px_55px_rgba(79,70,229,.35)]
-                "
-              >
-                Let's Build Together
+              <Link href="/#contact">
+  <motion.button
+    whileHover={{
+      scale: 1.05,
+      y: -3,
+    }}
+    whileTap={{
+      scale: 0.97,
+    }}
+    className="
+      group
+      flex
+      h-16
+      items-center
+      gap-4
+      rounded-2xl
+      bg-gradient-to-r
+      from-indigo-600
+      via-blue-600
+      to-violet-500
+      px-8
+      text-lg
+      font-semibold
+      text-white
+      shadow-[0_18px_55px_rgba(79,70,229,.35)]
+    "
+  >
+    Let's Build Together
 
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
+    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
+      <ArrowRight size={20} />
+    </span>
+  </motion.button>
+</Link>
 
-                  <ArrowRight size={20} />
-
-                </span>
-              </motion.button>
 <GradientBorder>
-              <motion.button
-                whileHover={{
-                  y: -3,
-                }}
-                whileTap={{
-                  scale: 0.98,
-                }}
-                className="
-                  h-16
-                  rounded-2xl
-                  border
-                  border-slate-200
-                  bg-white/80
-                  px-10
-                  text-lg
-                  font-semibold
-                  text-slate-800
-                  backdrop-blur-xl
-                  shadow-lg
-                "
-              >
-                Explore Services
-              </motion.button>
-              </GradientBorder>
+  <Link href="/services">
+    <motion.button
+      whileHover={{
+        y: -3,
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
+      className="
+        h-16
+        rounded-2xl
+        border
+        border-slate-200
+        bg-white/80
+        px-10
+        text-lg
+        font-semibold
+        text-slate-800
+        backdrop-blur-xl
+        shadow-lg
+      "
+    >
+      Explore Services
+    </motion.button>
+  </Link>
+</GradientBorder>
             </motion.div>
 
             {/* Highlights */}

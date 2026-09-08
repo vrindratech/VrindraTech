@@ -62,21 +62,21 @@ const socialLinks = [
     href: "https://www.linkedin.com/in/vrindra-tech-80572b433/",
     color: "#0A66C2",
   },
-  {
-    icon: FaInstagram,
-    href: "#",
-    color: "#E4405F",
-  },
-  {
-    icon: FaFacebookF,
-    href: "#",
-    color: "#1877F2",
-  },
-  {
-    icon: FaYoutube,
-    href: "#",
-    color: "#FF0000",
-  },
+  // {
+  //   icon: FaInstagram,
+  //   href: "#",
+  //   color: "#E4405F",
+  // },
+  // {
+  //   icon: FaFacebookF,6
+  //   href: "#",
+  //   color: "#1877F2",
+  // },
+  // {
+  //   icon: FaYoutube,
+  //   href: "#",
+  //   color: "#FF0000",
+  // },
   {
     icon: FaWhatsapp,
     href: "https://wa.me/918878535837",

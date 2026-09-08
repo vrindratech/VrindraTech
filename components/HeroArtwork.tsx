@@ -261,15 +261,15 @@ export default function HeroArtwork() {
       >
         <div className="absolute inset-5">
 
-          <div className="text-[10px] uppercase tracking-[0.35em] text-cyan-300">
+          <div className="text-[10px] uppercase tracking-[0.35em] text-cyan-400">
             LIVE
           </div>
 
-          <h4 className="mt-2 text-lg font-semibold text-white">
+          <h4 className="mt-2 text-lg font-semibold text-indigo-400">
             Dashboard
           </h4>
 
-          <div className="mt-5 space-y-3">
+          <div className="mt-2 space-y-3">
 
             <div className="h-2 rounded-full bg-cyan-400" />
 
@@ -282,7 +282,7 @@ export default function HeroArtwork() {
           <div className="absolute bottom-0 left-0 right-0 flex gap-2">
 
             <div className="flex-1 rounded-xl bg-indigo-500/30 p-3 text-center text-xs text-white">
-              98%
+              2 Active Projects
             </div>
 
             <div className="rounded-xl bg-cyan-400/20 p-3 text-white">

@@ -339,7 +339,7 @@ export default function TermsAndConditionsPage() {
               If you have any questions or concerns about these terms and conditions, please don't hesitate to contact us.
             </p>
             <Link
-              href="#contact"
+              href="\#contact"
               className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 px-8 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
             >
               Contact Us
@@ -379,7 +379,7 @@ export default function TermsAndConditionsPage() {
               </Link>
 
               <Link
-                href="#contact"
+                href="\#contact"
                 className="group flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 px-8 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-105"
               >
                 Get Started

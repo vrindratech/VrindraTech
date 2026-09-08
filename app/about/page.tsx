@@ -1305,7 +1305,7 @@ export default function About() {
             </Reveal>
 
             <motion.a
-              href="/contact"
+              href="/#contact"
               whileHover={{
                 scale: 1.04,
               }}
