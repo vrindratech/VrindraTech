@@ -1,32 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-export const metadata = {
-  title: "Jupito Data - Verified B2B Contact Data & Custom Research",
+export const metadata: Metadata = {
+  title: "Vrindra Tech Technologies",
+  description: "Website Development, Mobile Apps & Software Solutions",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>
+        <Navbar />
+
+        {children}
+
+        <Footer />
+      </body>
     </html>
   );
 }

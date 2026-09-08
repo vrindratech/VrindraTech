@@ -1,115 +1,151 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { HiOutlineMenuAlt3, HiX } from "react-icons/hi";
+import Link from "next/link";
+import { useState } from "react";
+import { HiMenu, HiX } from "react-icons/hi";
 
-const navLinks = [
-  {
-    name: "Home",
-    href: "#home",
-  },
-  {
-    name: "About Us",
-    href: "/about",
-  },
-  {
-    name: "Services",
-    href: "#services",
-  },
-  // {
-  //   name: "Industries",
-  //   href: "#industries",
-  // },
-  {
-    name: "Testimonials",
-    href: "#testimonials",
-  },
-  {
-    name: "Contact",
-    href: "#contact",
-  },
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+
+  // Programs
+
+  { label: "Portfolio", href: "/portfolio" },
+  // { label: "Career", href: "#career" },
+  //{ label: "Testimonials", href: "/testimonials" },
+    { label: "Programs", href: "/training-internship" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white shadow-lg"
-          : "bg-white/80 backdrop-blur-md"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-20">
+    <header className="fixed left-0 top-0 z-50 w-full bg-slate-950/95 backdrop-blur-xl shadow-lg">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
 
-        <div className="flex items-center gap-3">
+        {/* =====================================================
+            LOGO
+        ===================================================== */}
+
+        <Link href="/" className="flex items-center gap-3">
           <img
-            src="/images/logo.png"
-            alt="JupitoData"
-            className="h-19 w-auto"
+            src="/logo.png"
+            alt="Company Logo"
+            className="h-20 w-auto"
           />
+        </Link>
+
+        {/* =====================================================
+            DESKTOP MENU
+        ===================================================== */}
+
+        <nav className="hidden items-center gap-8 lg:flex">
+          {navItems.map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              className="font-medium text-white transition hover:text-cyan-300"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        {/* =====================================================
+            CTA
+        ===================================================== */}
+
+        <div className="hidden lg:block">
+          <Link
+            href="/#contact"
+            className="
+              rounded-full
+              bg-gradient-to-r
+              from-indigo-600
+              via-blue-500
+              to-violet-500
+              px-7
+              py-3
+              font-semibold
+              text-white
+              shadow-lg
+              transition
+              hover:shadow-xl
+              hover:-translate-y-0.5
+            "
+          >
+            Start Project
+          </Link>
         </div>
 
-        <nav className="hidden lg:flex gap-10 font-medium">
-
-  {navLinks.map((item) => (
-
-    <a
-      key={item.name}
-      href={item.href}
-      className="text-gray-700 hover:text-orange-500 transition duration-300"
-    >
-      {item.name}
-    </a>
-
-  ))}
-
-  </nav>
-
-        <a
-          href="#contact"
-        className="hidden lg:flex items-center justify-center bg-orange-500 hover:bg-orange-600 transition text-white px-6 py-3 rounded-full font-semibold"
-          >
-           Get Free Data Sample
-        </a>
+        {/* =====================================================
+            MOBILE MENU BUTTON
+        ===================================================== */}
 
         <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden text-3xl"
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          className="text-3xl text-white lg:hidden"
+          onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {menuOpen ? <HiX /> : <HiOutlineMenuAlt3 />}
+          {mobileOpen ? <HiX /> : <HiMenu />}
         </button>
       </div>
 
-      {menuOpen && (
-        <div className="lg:hidden bg-white px-6 pb-6 flex flex-col gap-5">
-          {navLinks.map((item) => (
+      {/* =====================================================
+          MOBILE MENU
+      ===================================================== */}
 
-  <a
-    key={item.name}
-    href={item.href}
-    onClick={() => setMenuOpen(false)}
-    className="text-gray-700 hover:text-orange-500 transition"
-  >
-    {item.name}
-  </a>
+      {mobileOpen && (
+        <div className="border-t border-white/10 bg-slate-950 lg:hidden">
+          <div className="flex flex-col p-6">
 
-))}
-          <a
-  href="#contact"
-  onClick={() => setMenuOpen(false)}
-  className="bg-orange-500 text-white py-3 rounded-xl text-center font-semibold"
->
-  Get Free Data Sample
-</a>
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="
+                  border-b
+                  border-white/10
+                  py-4
+                  text-white
+                  transition
+                  hover:text-cyan-300
+                "
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            {/* Mobile CTA */}
+
+            <Link
+              href="/#contact"
+              onClick={() => setMobileOpen(false)}
+              className="
+                mt-6
+                rounded-full
+                bg-gradient-to-r
+                from-indigo-600
+                via-blue-500
+                to-violet-500
+                py-3
+                text-center
+                font-semibold
+                text-white
+                shadow-lg
+                transition
+                hover:shadow-xl
+              "
+            >
+              Start Project
+            </Link>
+
+          </div>
         </div>
       )}
     </header>

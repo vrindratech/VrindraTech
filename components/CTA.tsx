@@ -1,459 +1,381 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
-  FaEnvelope,
-  FaPhoneAlt,
-  FaMapMarkerAlt,
-  FaCommentDots,
-  FaPaperPlane,
-  FaUser,
-  FaBuilding,
-  FaChevronDown,
-  FaCheckCircle,
-  FaLinkedin
+  HiOutlinePhone,
+  HiOutlineEnvelope,
+  HiOutlineMapPin,
+  HiOutlineClock,
+  HiArrowRight
+} from "react-icons/hi2";
+
+import {
+  FaWhatsapp,
+  FaLinkedinIn,
 } from "react-icons/fa";
 
-const services = [
-  "Data Collection",
-  "Lead Generation & Research",
-  "Contact List Building",
-  "Web Research & Scraping",
-  "LinkedIn Research",
-  "Data Enrichment",
-  "Company Research",
-  "Custom Data Project",
-  "Product Based Research",
-];
-
-const trustBadges = [
-  "Human Verified",
-  "Custom Build",
-  "GDPR Compliant",
-  "Quality Assured",
-];
-
 export default function Contact() {
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
-
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    company: "",
-    service: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setLoading(true);
-    setSuccess("");
-    setError("");
-
-    const data = {
-      access_key: "bd28fb9b-56d7-409d-b210-b4e0cd70a812",
-      subject: "New Lead from JupitoData Website",
-      from_name: "JupitoData Website",
-      ...form,
-    };
-
-    try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-          body: JSON.stringify(data),
-        }
-      );
-
-      const result = await response.json();
-
-      if (result.success) {
-        setSuccess(
-          "✅ Thank you! Your inquiry has been sent successfully."
-        );
-
-        setForm({
-          name: "",
-          email: "",
-          company: "",
-          service: "",
-          message: "",
-        });
-      } else {
-        setError("❌ Unable to send your message.");
-      }
-    } catch (err) {
-      console.error(err);
-      setError("❌ Something went wrong. Please try again.");
-    }
-
-    setLoading(false);
-  };
-
   return (
     <section
       id="contact"
-      className="relative overflow-hidden pt-20 pb-10"
-      style={{
-        backgroundColor: "#FFF9F5",
-        backgroundImage: `
-          linear-gradient(rgba(249,115,22,0.05) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(249,115,22,0.05) 1px, transparent 1px)
-        `,
-        backgroundSize: "40px 40px",
-      }}
+      className="relative overflow-hidden bg-white pt-10 pb-8"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(249,115,22,0.08),transparent_60%)]" />
+      {/* Background Blur */}
+ <div className="absolute -left-40 -top-32 h-[720px] w-[720px] rounded-full bg-blue-400/10 blur-[180px]" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <div className="absolute right-[-180px] top-0 h-[700px] w-[700px] rounded-full bg-pink-300/20 blur-[180px]" />
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+        <div className="absolute bottom-[-260px] left-1/2 h-[800px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-400/10 blur-[220px]" />
 
-          {/* LEFT SIDE */}
+      <div className="relative mx-auto max-w-7xl px-6">
 
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .7 }}
-          >
+        {/* Heading */}
 
-            <span className="inline-block rounded-full bg-orange-100 px-5 py-2 text-sm font-semibold uppercase tracking-wider text-orange-600">
-              Get In Touch
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: .6 }}
+          className="text-center"
+        >
+
+          <span className="inline-flex rounded-full border border-indigo-200 bg-indigo-50 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
+
+            Contact Us
+
+          </span>
+
+          <h2 className="mt-6 text-5xl font-black text-slate-900">
+
+            Let's Build Something
+
+            <span className="block bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 pb-2 bg-clip-text text-transparent">
+
+              Amazing Together
+
             </span>
 
-            <h2 className="mt-6 text-5xl lg:text-6xl font-bold leading-tight text-slate-900">
-              Let's Build Your
-              <span className="block text-orange-500">
-                Data Strategy
-              </span>
-            </h2>
+          </h2>
 
-            <p className="mt-8 text-lg leading-9 text-gray-600">
-              Ready to unlock verified business data and qualified
-              leads? Tell us about your project and our experts
-              will prepare a custom solution tailored to your
-              business.
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-600">
+
+            Whether you're starting a new project or looking
+            for a reliable technology partner, we'd love to
+            hear about your ideas.
+
+          </p>
+
+        </motion.div>
+
+        {/* Main Content */}
+
+        <div className="mt-20 grid gap-10 lg:grid-cols-[420px_1fr]">
+
+          {/* LEFT CARD */}
+
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: .6 }}
+            className="rounded-[32px] border border-slate-200 bg-gradient-to-br from-indigo-600 via-blue-500 to-violet-500 p-10 text-white shadow-xl"
+          >
+
+            <h3 className="text-3xl font-bold">
+
+              Get In Touch
+
+            </h3>
+
+            <p className="mt-5 leading-8 text-blue-100">
+
+              We'd be happy to discuss your project,
+              answer your questions, or provide a free
+              consultation.
+
             </p>
-                        {/* Contact Cards */}
 
-            <div className="mt-14 space-y-7">
+            {/* Phone */}
 
-              {/* Email */}
+            <div className="mt-10 flex gap-5">
 
-              <motion.a
-                href="mailto:mitesh@jupitodata.com"
-                whileHover={{ x: 8 }}
-                className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-lg transition"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100">
-                  <FaEnvelope size={24} className="text-orange-500" />
-                </div>
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
 
-                <div>
-                  <p className="text-gray-500">Email Us</p>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    mitesh@jupitodata.com
-                  </h3>
-                </div>
-              </motion.a>
+                <HiOutlinePhone className="text-2xl" />
 
-              {/* Phone */}
+              </div>
 
-              <motion.a
-                href="tel:+917990542781"
-                whileHover={{ x: 8 }}
-                className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-lg transition"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100">
-                  <FaPhoneAlt size={22} className="text-orange-500" />
-                </div>
+              <div>
 
-                <div>
-                  <p className="text-gray-500">Call Us</p>
-                  <h3 className="text-xl font-bold text-slate-900">
-                    +91 7990542781
-                  </h3>
-                </div>
-              </motion.a>
+                <p className="text-blue-100">
+                  Phone
+                </p>
 
-               {/* LINKEDIN */}
+                <a
+                  href="tel:+918878535837"
+                  className="text-xl font-semibold hover:text-cyan-100"
+                >
+                  +91 8878535837
+                </a>
 
-<motion.a
-  href="https://www.linkedin.com/company/jupitodata/"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ x: 8 }}
-  className="group flex items-center gap-5 rounded-2xl bg-white p-5 shadow-lg transition hover:shadow-xl"
->
-  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100">
-                  <FaLinkedin size={22} className="text-orange-500" />
-                </div>
-
-  <div>
-    <p className="text-gray-500">LinkedIn</p>
-
-    <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#0077B5] transition">
-      linkedin.com/company/jupitodata
-    </h3>
-  </div>
-</motion.a>
-
-              {/* Location */}
-
-              <motion.div
-                whileHover={{ x: 8 }}
-                className="flex items-center gap-5 rounded-2xl bg-white p-5 shadow-lg"
-              >
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-100">
-                  <FaMapMarkerAlt size={22} className="text-orange-500" />
-                </div>
-
-                <div>
-                  <p className="text-gray-500">Global Coverage</p>
-
-                  <h3 className="text-xl font-bold text-slate-900">
-                    India • USA • UK • Canada • Australia • Europe
-                  </h3>
-                </div>
-              </motion.div>
+              </div>
 
             </div>
 
-            {/* Trust Badges */}
+            {/* Email */}
 
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-8 flex gap-5">
+  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-[22px] bg-white/15">
+    <HiOutlineEnvelope className="text-[30px] text-white" />
+  </div>
 
-              {trustBadges.map((badge, index) => (
+  <div>
+    <p className="text-blue-100">
+      Email
+    </p>
 
-                <motion.div
-                  key={badge}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: index * 0.12,
-                  }}
-                  whileHover={{
-                    y: -5,
-                    scale: 1.05,
-                  }}
-                  className="group relative flex cursor-pointer items-center gap-3 overflow-hidden rounded-full border border-orange-100 bg-white px-6 py-3 shadow-md transition-all hover:border-orange-500 hover:shadow-xl"
-                >
+    <a
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=vrindratech@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-md font-semibold hover:text-cyan-100"
+    >
+      vrindratech@gmail.com
+    </a>
+  </div>
+</div>
 
-                  <FaCheckCircle className="text-orange-500" />
+            {/* Location */}
 
-                  <span className="font-medium text-gray-700">
-                    {badge}
-                  </span>
+            <div className="mt-8 flex gap-5">
 
-                </motion.div>
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
 
-              ))}
+                <HiOutlineMapPin className="text-2xl" />
+
+              </div>
+
+              <div>
+
+                <p className="text-blue-100">
+                  Location
+                </p>
+
+                <h4 className="text-xl font-semibold">
+
+                  Ahmedabad, Gujarat
+
+                </h4>
+
+              </div>
+
+            </div>
+
+            {/* Hours */}
+
+            <div className="mt-8 flex gap-5">
+
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
+
+                <HiOutlineClock className="text-2xl" />
+
+              </div>
+
+              <div>
+
+                <p className="text-blue-100">
+                  Working Hours
+                </p>
+
+                <h4 className="text-xl font-semibold">
+
+                  Mon – Sat | 10 AM – 7 PM
+
+                </h4>
+
+              </div>
+
+            </div>
+
+            {/* Social */}
+
+            <div className="mt-12 flex gap-4">
+
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 transition hover:bg-white hover:text-blue-600"
+              >
+                <FaLinkedinIn />
+              </a>
+
+              <a
+                href="https://wa.me/918878535837"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 transition hover:bg-white hover:text-green-600"
+              >
+                <FaWhatsapp />
+              </a>
 
             </div>
 
           </motion.div>
 
-          {/* FORM */}
+          {/* RIGHT FORM */}
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .7 }}
-          >
+         <motion.div
+  initial={{ opacity: 0, x: 40 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: .6 }}
+  className="rounded-[32px] border border-slate-200 bg-white p-10 shadow-xl"
+>
+          <h3 className="text-3xl font-bold text-slate-900">
+  Tell Us About Your Project
+</h3>
 
-            <motion.form
-              onSubmit={handleSubmit}
-              initial={{ opacity: 0, x: 60 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: .8 }}
-              className="relative rounded-[35px] border border-gray-100 bg-white p-10 shadow-[0_25px_70px_rgba(0,0,0,0.08)]"
-            >
+<p className="mt-3 text-slate-500">
+  Fill in the details below and our team will contact you within 24 hours.
+</p>
 
-              <div className="grid gap-8 md:grid-cols-2">
-              {/* Full Name */}
+<form className="mt-10 space-y-6">
 
-<div>
-  <label className="mb-3 block font-semibold text-gray-700">
-    Full Name
-  </label>
+  {/* Name & Email */}
 
-  <div className="relative">
-    <FaUser className="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500" />
+  <div className="grid gap-6 md:grid-cols-2">
 
-    <input
-      type="text"
-      name="name"
-      value={form.name}
-      onChange={handleChange}
-      required
-      placeholder="John Smith"
-      className="w-full rounded-2xl border border-gray-200 py-4 pl-14 pr-5 text-black placeholder:text-gray-400 transition-all duration-300 hover:border-orange-300 hover:shadow-lg focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-100"
-    />
+    <div>
+      <label className="mb-2 block font-medium text-slate-700">
+        Full Name
+      </label>
+
+      <input
+        type="text"
+        placeholder="John Doe"
+        className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
+      />
+    </div>
+
+    <div>
+      <label className="mb-2 block font-medium text-slate-700">
+        Email Address
+      </label>
+
+      <input
+        type="email"
+        placeholder="john@example.com"
+        className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
+      />
+    </div>
+
   </div>
-</div>
 
-{/* Email */}
+  {/* Phone & Company */}
 
-<div>
-  <label className="mb-3 block font-semibold text-gray-700">
-    Email Address
-  </label>
+  <div className="grid gap-6 md:grid-cols-2">
 
-  <div className="relative">
-    <FaEnvelope className="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500" />
+    <div>
+      <label className="mb-2 block font-medium text-slate-700">
+        Phone Number
+      </label>
 
-    <input
-      type="email"
-      name="email"
-      value={form.email}
-      onChange={handleChange}
-      required
-      placeholder="john@email.com"
-      className="w-full rounded-2xl border border-gray-200 py-4 pl-14 pr-5 text-black placeholder:text-gray-400 transition-all duration-300 hover:border-orange-300 hover:shadow-lg focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-100"
-    />
+      <input
+        type="tel"
+        placeholder="+91 XXXXX XXXXX"
+        className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
+      />
+    </div>
+
+    <div>
+      <label className="mb-2 block font-medium text-slate-700">
+        Company Name
+      </label>
+
+      <input
+        type="text"
+        placeholder="Your Company"
+        className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
+      />
+    </div>
+
   </div>
-</div>
 
-{/* Company */}
+  {/* Service */}
 
-<div>
-  <label className="mb-3 block font-semibold text-gray-700">
-    Company
-  </label>
+  <div>
 
-  <div className="relative">
-    <FaBuilding className="absolute left-5 top-1/2 -translate-y-1/2 text-orange-500" />
-
-    <input
-      type="text"
-      name="company"
-      value={form.company}
-      onChange={handleChange}
-      placeholder="Company Name"
-      className="w-full rounded-2xl border border-gray-200 py-4 pl-14 pr-5 text-black placeholder:text-gray-400 transition-all duration-300 hover:border-orange-300 hover:shadow-lg focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-100"
-    />
-  </div>
-</div>
-
-{/* Service */}
-
-<div>
-  <label className="mb-3 block font-semibold text-gray-700">
-    Select a Service
-  </label>
-
-  <div className="relative">
+    <label className="mb-2 block font-medium text-slate-700">
+      Service Required
+    </label>
 
     <select
-      name="service"
-      value={form.service}
-      onChange={handleChange}
-      required
-      className="w-full appearance-none rounded-2xl border border-gray-200 bg-white py-4 pl-5 pr-14 text-[15px] text-black transition-all duration-300 hover:border-orange-300 hover:shadow-lg focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-100"
+      className="w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
     >
-      <option value="">Select Service</option>
-
-      {services.map((service) => (
-        <option key={service} value={service}>
-          {service}
-        </option>
-      ))}
+      <option>Select a Service</option>
+      <option>Website Development</option>
+      <option>Mobile App Development</option>
+      <option>Custom Software Development</option>
+      <option>UI / UX Design</option>
+      <option>Digital Marketing</option>
+      <option>Social Media Marketing</option>
     </select>
 
-    <FaChevronDown className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-orange-500" />
-
   </div>
-</div>
 
-</div>
-{/* Project Details */}
+  {/* Message */}
 
-<div className="mt-8">
+  <div>
 
-  <label className="mb-3 block font-semibold text-gray-700">
-    Project Details
-  </label>
-
-  <div className="relative">
-
-    <FaCommentDots className="absolute left-5 top-6 text-orange-500" />
+    <label className="mb-2 block font-medium text-slate-700">
+      Project Details
+    </label>
 
     <textarea
-      rows={4}
-      name="message"
-      value={form.message}
-      onChange={handleChange}
-      required
-      placeholder="Tell us about your project requirements..."
-      className="w-full rounded-2xl border border-gray-200 py-4 pl-14 pr-5 text-black placeholder:text-gray-400 transition-all duration-300 hover:border-orange-300 hover:shadow-lg focus:border-orange-500 focus:outline-none focus:ring-4 focus:ring-orange-100"
+      rows={6}
+      placeholder="Briefly describe your project requirements..."
+      className="w-full rounded-2xl border border-slate-200 px-5 py-4 outline-none transition-all duration-300 focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100"
     />
 
   </div>
 
-</div>
+  {/* CTA */}
 
-{/* Submit Button */}
+  <div className="flex flex-wrap gap-4 pt-2">
 
-<motion.button
-  whileHover={{ scale: 1.03 }}
-  whileTap={{ scale: 0.98 }}
-  type="submit"
-  disabled={loading}
-  className="group mt-10 flex w-full items-center justify-center gap-3 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 py-5 text-xl font-semibold text-white shadow-xl transition disabled:cursor-not-allowed disabled:opacity-70"
->
+    <button
+      type="submit"
+      className="group inline-flex items-center gap-3 rounded-2xl bg-[#2563EB] px-8 py-4 font-semibold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-[#1D4ED8] hover:shadow-blue-500/40"
+    >
+      Build With Vrindra Tech
 
-  {loading ? "Sending..." : "Send Message"}
+      <HiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
 
-  <FaPaperPlane className="transition duration-300 group-hover:translate-x-2 group-hover:-translate-y-1" />
+    </button>
 
-</motion.button>
+    <a
+      href="https://wa.me/918878535837?text=Hi%20Vrindra Tech,%20I%20would%20like%20to%20discuss%20my%20project."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-3 rounded-2xl border border-green-500 px-8 py-4 font-semibold text-green-600 transition-all duration-300 hover:bg-green-500 hover:text-white"
+    >
+      <FaWhatsapp />
 
-{/* Success */}
+      Chat on WhatsApp
 
-{success && (
-  <div className="mt-6 rounded-2xl border border-green-200 bg-green-50 p-4 text-center text-green-700">
-    {success}
+    </a>
+
   </div>
-)}
 
-{/* Error */}
-
-{error && (
-  <div className="mt-6 rounded-2xl border border-red-200 bg-red-50 p-4 text-center text-red-700">
-    {error}
-  </div>
-)}
-
-</motion.form>
+</form>
 
 </motion.div>
 
 </div>
-      </div>
-    </section>
+
+</div>
+
+</section>
   );
 }

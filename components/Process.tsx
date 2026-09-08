@@ -1,130 +1,90 @@
 "use client";
 
-import { motion } from "framer-motion";
-import {
-  FaClipboardList,
-  FaSearch,
-  FaCheckCircle,
-  FaShieldAlt,
-  FaPaperPlane,
-} from "react-icons/fa";
+import Image from "next/image";
 
-const process = [
+const processItems = [
   {
-    step: "01",
-    icon: FaClipboardList,
-    title: "Requirement",
-    desc: "Understand your business goals and ideal customer profile.",
+    title: "Why Agile",
+    heading: "Why Agile works for modern software teams",
+    points: [
+      "Faster feedback with short delivery cycles.",
+      "Continuous improvement through regular reviews.",
+      "Flexible planning so priorities can shift with market needs.",
+    ],
+    image: "/images/Agile.png",
+    imageSide: "left",
   },
   {
-    step: "02",
-    icon: FaSearch,
-    title: "Research",
-    desc: "Collect verified company and decision-maker information.",
+    title: "Why Trust Us",
+    heading: "Why businesses choose us for dependable delivery",
+    points: [
+      "Transparent communication and clear milestones.",
+      "Dedicated teams aligned to your product vision.",
+      "Proven delivery track record across industries.",
+    ],
+    image: "/images/Trust.png",
+    imageSide: "right",
   },
-  {
-    step: "03",
-    icon: FaCheckCircle,
-    title: "Verification",
-    desc: "Validate emails, phone numbers and company details.",
-  },
-  {
-    step: "04",
-    icon: FaShieldAlt,
-    title: "Quality Check",
-    desc: "Perform multiple quality checks to ensure data accuracy.",
-  },
-  {
-    step: "05",
-    icon: FaPaperPlane,
-    title: "Delivery",
-    desc: "Deliver your database in Excel or CSV format on time.",
-  },
+  
 ];
 
 export default function Process() {
   return (
-    <section className="py-28 bg-slate-900 text-white pt-20 pb-10">
-
-      <div className="max-w-7xl mx-auto px-6">
-
-        {/* Heading */}
-
+    <section className="bg-white py-24 text-slate-900">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="text-center mb-20">
-
-          <span className="uppercase tracking-[5px] text-orange-400 font-semibold">
+          <span className="inline-flex rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-slate-700">
             Our Process
           </span>
-
-          <h2 className="text-5xl font-bold mt-4">
-            How We Deliver Quality Data
+          <h2 className="mt-6 text-5xl font-black tracking-tight text-slate-900 sm:text-6xl">
+            How we help your business move faster and stay supported
           </h2>
-
-          <p className="mt-6 text-slate-300 max-w-3xl mx-auto text-lg leading-8">
-            Our streamlined workflow ensures every database is accurate,
-            verified and delivered quickly to help your business grow.
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+            Every stage includes clear outcomes, trust-building support, growth-focused services, and reliable maintenance.
           </p>
-
         </div>
 
-        {/* Timeline */}
-
-        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8">
-
-          {process.map((item, index) => {
-
-            const Icon = item.icon;
-
+        <div className="space-y-20">
+          {processItems.map((item, index) => {
+            const isImageLeft = item.imageSide === "left";
             return (
-
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.15 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="relative text-center group"
+              <div
+                key={item.title}
+                className={`grid gap-8 items-center lg:grid-cols-[1fr_1fr] ${
+                  isImageLeft ? "lg:grid-flow-row" : "lg:grid-flow-row-dense"
+                }`}
               >
-
-                {/* Connector Line */}
-                {index !== process.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 left-[60%] w-full h-1 bg-orange-500/30"></div>
-                )}
-
-                {/* Step Number */}
-                <div className="w-12 h-12 rounded-full bg-orange-500 text-white flex items-center justify-center font-bold mx-auto mb-5 shadow-lg">
-                  {item.step}
+                <div className={isImageLeft ? "lg:order-first" : "lg:order-last"}>
+                  <div className="overflow-hidden rounded-[32px] border border-slate-200 bg-slate-50 shadow-lg">
+                    <div className="relative h-[32rem] md:h-[36rem] lg:h-[40rem]">
+                      <Image src={item.image} alt={item.title} fill className="object-contain object-center" />
+                    </div>
+                  </div>
                 </div>
 
-                {/* Icon */}
-                <div className="w-20 h-20 rounded-full bg-white flex items-center justify-center mx-auto shadow-xl group-hover:bg-orange-500 transition duration-300">
-                  <Icon
-                    size={34}
-                    className="text-orange-500 group-hover:text-white transition duration-300"
-                  />
+                <div className="space-y-8">
+                  <div className="inline-flex rounded-full bg-cyan-50 px-4 py-2 text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                    {item.title}
+                  </div>
+                  <div className="space-y-6 rounded-[32px] border border-slate-200 bg-slate-50 p-10 shadow-lg">
+                    <h3 className="text-3xl font-bold text-slate-900">{item.heading}</h3>
+                    <div className="space-y-4">
+                      {item.points.map((point) => (
+                        <div key={point} className="flex gap-4">
+                          <span className="mt-1 inline-flex h-8 w-8 items-center justify-center rounded-full bg-cyan-700 text-sm font-bold text-white">
+                            ✓
+                          </span>
+                          <p className="text-base leading-7 text-slate-700">{point}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-
-                {/* Title */}
-                <h3 className="text-2xl font-bold mt-8">
-                  {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="mt-4 text-slate-300 leading-7">
-                  {item.desc}
-                </p>
-
-              </motion.div>
-
+              </div>
             );
-
           })}
-
         </div>
-
       </div>
-
     </section>
   );
 }

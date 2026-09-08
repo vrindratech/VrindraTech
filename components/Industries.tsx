@@ -1,131 +1,126 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  FaLaptopCode,
-  FaHeartbeat,
-  FaBullhorn,
-  FaUserTie,
-  FaBalanceScale,
-  FaUniversity,
-  FaNewspaper,
-  FaGlobe,
-} from "react-icons/fa";
+import { HiArrowRight } from "react-icons/hi";
 
-const industries = [
-  {
-    icon: FaLaptopCode,
-    title: "SaaS & Technology",
-    desc: "Verified technology companies and software decision makers.",
-  },
-  {
-    icon: FaBullhorn,
-    title: "Digital Marketing",
-    desc: "Agencies, advertisers and marketing professionals.",
-  },
-  {
-    icon: FaHeartbeat,
-    title: "Healthcare",
-    desc: "Hospitals, clinics, pharmaceutical and healthcare companies.",
-  },
-  {
-    icon: FaUserTie,
-    title: "Staffing & Recruitment",
-    desc: "Recruitment firms and HR professionals worldwide.",
-  },
-  {
-    icon: FaBalanceScale,
-    title: "Legal Services",
-    desc: "Law firms, legal consultants and compliance companies.",
-  },
-  {
-    icon: FaUniversity,
-    title: "Finance",
-    desc: "Banks, fintech, insurance and financial institutions.",
-  },
-  {
-    icon: FaNewspaper,
-    title: "Media & Publishing",
-    desc: "Publishing houses, media agencies and news companies.",
-  },
-  {
-    icon: FaGlobe,
-    title: "Global Enterprises",
-    desc: "Large organizations operating across multiple countries.",
-  },
-];
-
-export default function Industries() {
+export default function Portfolio() {
   return (
-    <section id="industries" className="scroll-mt-24 py-28 bg-white">
+    <section
+      id="portfolio"
+      className="bg-[#F8FBFF] py-28"
+    >
+      <div className="mx-auto max-w-7xl px-6">
 
-      <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
 
-        <div className="text-center mb-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
 
-          <span className="uppercase tracking-[5px] text-orange-500 font-semibold">
-            Industries We Serve
+          <span className="inline-flex rounded-full border border-indigo-200 bg-indigo-50 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-indigo-600">
+
+            Featured Project
+
           </span>
 
-          <h2 className="text-5xl font-bold text-slate-900 mt-4">
-            Trusted Across Multiple Industries
+          <h2 className="mt-6 text-5xl font-black text-slate-900">
+
+            Our Recent
+
+            <span className="block bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+
+              Success Story
+
+            </span>
+
           </h2>
 
-          <p className="mt-6 max-w-3xl mx-auto text-gray-600 text-lg leading-8">
-            We provide verified B2B databases and research solutions
-            tailored to businesses across diverse industries.
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-slate-600">
+
+            A glimpse into one of our successfully delivered
+            digital solutions built with modern technologies
+            and business-focused design.
+
           </p>
 
-        </div>
+        </motion.div>
+        <motion.div
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  className="mt-20 overflow-hidden rounded-[36px] bg-white shadow-xl lg:grid lg:grid-cols-2"
+>
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+  {/* Left */}
 
-          {industries.map((industry, index) => {
+  <div className="bg-slate-100">
 
-            const Icon = industry.icon;
+    <img
+      src="/images/projects/jupitodata.jpg"
+      alt="JupitoData"
+      className="h-full w-full object-cover"
+    />
 
-            return (
+  </div>
 
-              <motion.div
-                key={index}
-                whileHover={{
-                  y: -10,
-                  scale: 1.03,
-                }}
-                className="group rounded-3xl border border-gray-200 p-8 bg-white shadow-lg hover:shadow-2xl hover:border-orange-500 transition duration-300"
-              >
+  {/* Right */}
 
-                <div className="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-orange-500 transition">
+  <div className="p-12">
 
-                  <Icon
-                    size={30}
-                    className="text-orange-500 group-hover:text-white transition"
-                  />
+    <span className="rounded-full bg-indigo-100 px-4 py-2 text-sm font-semibold text-indigo-600">
+      B2B Data Platform
+    </span>
 
-                </div>
+    <h2 className="mt-6 text-4xl font-bold text-slate-900">
+      JupitoData
+    </h2>
 
-                <h3 className="text-xl font-bold text-slate-900">
+    <p className="mt-6 leading-8 text-slate-600">
 
-                  {industry.title}
+      JupitoData is a modern B2B lead generation
+      platform developed to provide verified contact
+      data, custom research services, and business
+      intelligence solutions for companies worldwide.
 
-                </h3>
+    </p>
 
-                <p className="text-gray-600 mt-4 leading-7">
+    {/* Tech */}
 
-                  {industry.desc}
+    <div className="mt-8 flex flex-wrap gap-3">
 
-                </p>
+      <span className="rounded-full bg-slate-100 px-4 py-2">
+        Next.js
+      </span>
 
-              </motion.div>
+      <span className="rounded-full bg-slate-100 px-4 py-2">
+        Tailwind CSS
+      </span>
 
-            );
+      <span className="rounded-full bg-slate-100 px-4 py-2">
+        React
+      </span>
 
-          })}
+    </div>
 
-        </div>
+    <a
+      href="https://jupitodata.com"
+      target="_blank"
+      className="mt-10 inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 px-8 py-4 font-semibold text-white transition hover:shadow-lg"
+    >
+      View Website
+
+      <HiArrowRight />
+
+    </a>
+
+  </div>
+
+</motion.div>
 
       </div>
-
     </section>
   );
 }

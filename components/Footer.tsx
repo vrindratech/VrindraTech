@@ -1,323 +1,337 @@
 "use client";
 
-import {
-  FaPhoneAlt,
-  FaEnvelope,
-  FaMapMarkerAlt,FaWhatsapp, FaCopy
-} from "react-icons/fa";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookF,
+  FaYoutube,
+  FaWhatsapp,
+} from "react-icons/fa";
+
+import {
+  HiOutlineArrowRight,
+  HiOutlinePhone,
+  HiOutlineEnvelope,
+  HiOutlineMapPin,
+} from "react-icons/hi2";
+
+const services = [
+  "Website Development",
+  "Mobile App Development",
+  "Custom Software",
+  "UI / UX Design",
+  "Digital Marketing",
+  "Social Media Marketing",
+];
+
+const companyLinks = [
+  {
+    name: "About Us",
+    href: "/about",
+  },
+  {
+    name: "Services",
+    href: "/services",
+  },
+  {
+    name: "Portfolio",
+    href: "/portfolio",
+  },
+  {
+    name: "Contact",
+    href: "/#contact",
+  },
+  {
+    name: "Privacy Policy",
+    href: "/privacy-policy",
+  },
+  {
+    name: "Terms & Conditions",
+    href: "/terms-and-conditions",
+  },
+];
+
+const socialLinks = [
+  {
+    icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/in/vrindra-tech-80572b433/",
+    color: "#0A66C2",
+  },
+  {
+    icon: FaInstagram,
+    href: "#",
+    color: "#E4405F",
+  },
+  {
+    icon: FaFacebookF,
+    href: "#",
+    color: "#1877F2",
+  },
+  {
+    icon: FaYoutube,
+    href: "#",
+    color: "#FF0000",
+  },
+  {
+    icon: FaWhatsapp,
+    href: "https://wa.me/918878535837",
+    color: "#25D366",
+  },
+];
+
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white ">
+    <footer className="relative mt-4 overflow-hidden bg-[#08111F] text-white">
+      {/* Background Blur */}
+      <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-indigo-500/10 blur-[170px]" />
+      <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-violet-500/10 blur-[170px]" />
 
-      {/* Top Footer */}
+      <div className="relative mx-auto max-w-[1400px] px-6">
+      
+       
 
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-10">
+        {/* ================= GRID ================= */}
 
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12">
-
+        <div className="mt-4 grid gap-16 lg:grid-cols-12">
           {/* Company */}
 
-          <div>
-             <h2 className="text-3xl font-bold text-orange-500">
-            <img
-            src="/images/whitelogo.png"
-            alt="JupitoData"
-            className="h-19 w-auto"
-              />   
-             </h2>
+          <div className="lg:col-span-5">
+            <Image
+              src="/logo.png"
+              alt="Vrindra Tech"
+              width={260}
+              height={160}
+              priority
+            />
 
-
-            <p className="text-gray-400 mt-6 leading-8">
-              Delivering verified B2B contact data, lead generation,
-              LinkedIn research and custom business intelligence
-              solutions worldwide.
+            <p className="mt-6 max-w-md leading-8 text-slate-400">
+              Building intelligent software, modern websites, scalable mobile
+              applications and digital products for ambitious businesses.
             </p>
 
+            <div className="mt-12">
+              <div className="flex items-center gap-3">
+                <div className="h-8 w-1 rounded-full bg-indigo-400" />
+
+                <h3 className="text-2xl font-bold">
+                  Follow Us
+                </h3>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                {socialLinks.map((social, index) => {
+                  const Icon = social.icon;
+
+                  return (
+                    <motion.a
+                      key={index}
+                      href={social.href}
+                      whileHover={{
+                        y: -6,
+                        scale: 1.08,
+                      }}
+                      transition={{ duration: 0.25 }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = social.color;
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = "#111C2F";
+                      }}
+                      className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#111C2F] transition-all duration-300"
+                    >
+                      <Icon className="text-2xl text-gray-300 transition duration-300 hover:text-white" />
+                    </motion.a>
+                  );
+                })}
+              </div>
+            </div>
           </div>
+                    {/* ================= SERVICES ================= */}
 
-          {/* Services */}
+         <div className="lg:col-span-2">
+  <div className="flex items-center gap-3">
+    <div className="h-8 w-1 rounded-full bg-cyan-400" />
 
-          <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Services
-            </h3>
-
-            <ul className="space-y-5">
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
-      Lead Generation
-    </a>
-  </li>
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
-      B2B Data Collection
-    </a>
-  </li>
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
-      Email List Building
-    </a>
-  </li>
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
-      LinkedIn Research
-    </a>
-  </li>
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
-      Data Enrichment
-    </a>
-  </li>
-
-</ul>
-
-          </div>
-
-          {/* Quick Links */}
-
-          <div>
-
-            <h3 className="text-xl font-semibold mb-6">
-              Quick Links
-            </h3>
-
-            <ul className="space-y-5">
-
-  <li>
-    <a href="#home" className="hover:text-orange-500 transition">
-      Home
-    </a>
-  </li>
-
-  <li>
-    <a href="#about" className="hover:text-orange-500 transition">
-      About Us
-    </a>
-  </li>
-
-  <li>
-    <a href="#services" className="hover:text-orange-500 transition">
+    <h3 className="text-xl font-bold">
       Services
-    </a>
-  </li>
+    </h3>
+  </div>
 
-  <li>
-    <a href="#testimonials" className="hover:text-orange-500 transition">
-      Testimonials
-    </a>
-  </li>
+  <ul className="mt-8 space-y-4">
+    {services.map((service) => (
+      <li
+        key={service}
+        className="text-slate-400 transition-all duration-300 hover:pl-2 hover:text-indigo-400"
+      >
+        {service}
+      </li>
+    ))}
+  </ul>
+</div>
 
-  <li>
-    <a href="#contact" className="hover:text-orange-500 transition">
-      Contact
-    </a>
-  </li>
+          {/* ================= COMPANY ================= */}
 
-  <li>
-    <a href="/privacy-policy" className="hover:text-orange-500 transition">
-      Privacy Policy
-    </a>
-  </li>
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-1 rounded-full bg-indigo-500" />
 
-</ul>
+              <h3 className="text-xl font-bold">
+                Company
+              </h3>
+            </div>
 
+            <ul className="mt-8 space-y-4">
+              {companyLinks.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="group text-slate-400 transition-all duration-300 hover:pl-2 hover:text-indigo-300"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Contact */}
+          {/* ================= CONTACT ================= */}
 
-         <div>
+          <div className="lg:col-span-3">
+            <div className="flex items-center gap-3">
+              <div className="h-8 w-1 rounded-full bg-emerald-400" />
 
-  <h3 className="text-xl font-semibold mb-6">
-    Contact
-  </h3>
+              <h3 className="text-xl font-bold">
+                Get In Touch
+              </h3>
+            </div>
 
-  <div className="space-y-5 text-gray-400">
- {/* Phone */}
+            <div className="mt-8 space-y-7">
 
-    <div className="flex gap-3">
+              {/* Phone */}
 
-      <FaPhoneAlt className="text-orange-500 mt-1" />
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+                  <HiOutlinePhone className="text-xl" />
+                </div>
 
-      <a
-        href="tel:+917990542781"
-        className="hover:text-orange-500 transition"
-      >
-        +91 7990542781
-      </a>
+                <div>
+                  <p className="text-sm text-slate-500">
+                    Phone
+                  </p>
 
-    </div>
+                  <a
+                    href="tel:+918878535837"
+                    className="mt-1 block text-slate-300 transition hover:text-indigo-400"
+                  >
+                    +91 8878535837
+                  </a>
+                </div>
+              </div>
 
-    {/* Email */}
-<div className="flex items-start gap-4">
+              {/* Email */}
 
-  <FaEnvelope className="mt-1 text-2xl text-orange-500" />
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+                  <HiOutlineEnvelope className="text-xl" />
+                </div>
 
-  <div>
+                <div>
+                  <p className="text-sm text-slate-500">
+                    Email
+                  </p>
 
-    <h4 className="font-semibold text-white">
-      Email Us
-    </h4>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=vrindratech@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block text-slate-300 transition hover:text-indigo-400"
+                  >
+                    vrindratech@gmail.com
+                  </a>
+                </div>
+              </div>
 
-    <p className="text-gray-400 hover:text-orange-500 transition">
-      mitesh@jupitodata.com
-    </p>
+              {/* Address */}
 
-    <div className="mt-3 flex flex-wrap items-center gap-4 text-sm">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+                  <HiOutlineMapPin className="text-xl" />
+                </div>
 
-      {/* Open Gmail */}
+                <div>
+                  <p className="text-sm text-slate-500">
+                    Location                  
+                  </p>
 
-      <a
-        href="https://mail.google.com/mail/?view=cm&fs=1&to=mitesh@jupitodata.com&su=Business%20Enquiry"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-2 text-orange-500 hover:text-orange-400"
-      >
-        <FaEnvelope />
-        Open Gmail
-      </a>
+                  <p className="mt-1 leading-7 text-slate-300">
+                     <a
+                    className="mt-1 block text-slate-300 transition hover:text-indigo-400"
+                  >
+                    Ahmedabad,
+                    <br />
+                    Gujarat,
+                    <br />
+                    India
+                    </a>
+                  </p>
+                </div>
+              </div>
 
-      {/* Copy Email */}
-
-      <button
-        onClick={() => {
-          navigator.clipboard.writeText("mitesh@jupitodata.com");
-          alert("Email copied!");
-        }}
-        className="flex items-center gap-2 text-orange-500 hover:text-orange-400"
-      >
-        <FaCopy />
-        Copy Email
-      </button>
-
-    </div>
-
-    {/* WhatsApp */}
-
-    <a
-      href="https://wa.me/917990542781?text=Hi%20JupitoData,%20I%20am%20interested%20in%20your%20services."
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-4 inline-flex items-center gap-2 rounded-full bg-green-500 px-4 py-2 font-medium text-white transition hover:bg-green-600"
-    >
-      <FaWhatsapp />
-      Chat on WhatsApp
-    </a>
-
-  </div>
-
-</div>
-{/* Location */}
-  <div className="flex items-center gap-4">
-
-    <FaMapMarkerAlt className="text-orange-500 text-2xl mt-1" />
-
-    
-      <a
-        className="hover:text-orange-500 transition"
-      >
-        Ahmedabad, Gujarat
-      </a>
-
-  </div>
-
-</div>
-            {/* Social Icons */}
-
-      <div className="flex gap-4 mt-8">
-
-  <a
-   // href="https://facebook.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
-  >
-    <Image
-      src="/images/facebook.svg"
-      alt="Facebook"
-      width={44}
-      height={44}
-    />
-  </a>
-
-  <a
-    href="https://www.linkedin.com/company/jupitodata/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
-  >
-    <img
-      src="/images/linkedin.svg"
-      alt="LinkedIn"
-      width={44}
-      height={44}
-    />
-  </a>
-
-  <a
-   // href="https://x.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
-  >
-    <Image
-      src="/images/x.jpg"
-      alt="X"
-      width={44}
-      height={44}
-    />
-  </a>
-
-  <a
-  //  href="https://instagram.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-11 h-11 rounded-full bg-slate-800 hover:bg-slate-700 transition flex items-center justify-center"
-  >
-    <Image
-      src="/images/instagram.svg"
-      alt="Instagram"
-      width={44}
-      height={44}
-    />
-  </a>
-
-</div>
+            </div>
           </div>
 
         </div>
 
-      </div>
+        {/* Divider */}
 
-      {/* Bottom Footer */}
+        <div className="mt-20 border-t border-slate-800" />
+                {/* ================= Bottom ================= */}
 
-      <div className="border-t border-slate-800">
+        <div className="flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
 
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row justify-between items-center">
-
-          <p className="text-gray-500">
-
-            © 2026 JupitoData. All Rights Reserved.
-
+          <p className="text-center text-sm text-slate-500 md:text-left">
+            © {new Date().getFullYear()}{" "}
+              <span className="font-semibold text-white">
+              Vrindra Tech
+            </span>
+            . All Rights Reserved.
           </p>
 
-          <div className="flex gap-8 mt-4 md:mt-0 text-gray-500">
+          <div className="flex flex-wrap items-center gap-8">
 
             <Link
-            href="/privacy-policy"
-            className="hover:text-orange-500 transition"
+              href="/privacy-policy"
+              className="text-sm text-slate-400 transition hover:text-indigo-400"
             >
-             Privacy Policy
+              Privacy Policy
             </Link>
 
-           <Link href="/terms-and-conditions" className="hover:text-orange-500 transition">Terms & Conditions</Link>
+            <Link
+              href="/terms-and-conditions"
+              className="text-sm text-slate-400 transition hover:text-indigo-400"
+            >
+              Terms & Conditions
+            </Link>
+
+            <button
+              type="button"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  behavior: "smooth",
+                })
+              }
+              className="group flex items-center gap-2 text-sm font-semibold text-indigo-300 transition hover:text-white"
+            >
+              Back to Top
+
+              <HiOutlineArrowRight className="-rotate-90 transition-transform duration-300 group-hover:-translate-y-1" />
+            </button>
 
           </div>
 

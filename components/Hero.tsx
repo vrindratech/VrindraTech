@@ -1,369 +1,402 @@
 "use client";
 
+import Link from "next/link";
+import GradientBorder from "@/components/ui/GradientBorder";
 import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 import {
-  FaArrowRight,
-  FaCheckCircle,
-  FaUsers,
-  FaDatabase,
-  FaChartLine,
-  FaHeadset,
-} from "react-icons/fa";
+  ArrowRight,
+  ChevronDown,
+  Heart,
+  Box,
+  Users,
+  Trophy,
+  Headphones,
+  Computer,
+} from "lucide-react";
+import HeroArtwork from "./HeroArtwork";
 
-export default function Hero() { 
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+const fadeUp = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+const fadeLeft = {
+  hidden: {
+    opacity: 0,
+    x: 70,
+  },
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
+
+const stagger = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.18,
+    },
+  },
+};
+
+/* =========================================================
+   HERO
+========================================================= */
+
+export default function Hero() {
   return (
-    <section id="home" className="scroll-mt-24 relative overflow-hidden bg-[#07111f] scroll-mt-24">
+    <section className="relative overflow-hidden bg-[#f8faff]">
 
-      {/* Background */}
+      {/* ================= BACKGROUND ================= */}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-[#07111f] via-[#0d1a30] to-[#d94f10]" />
+      <div className="absolute inset-0 overflow-hidden">
 
-      <div
-        className="absolute inset-0 opacity-[0.05]"
-        style={{
-          backgroundImage:
-            "linear-gradient(to right,#ffffff 1px,transparent 1px),linear-gradient(to bottom,#ffffff 1px,transparent 1px)",
-          backgroundSize: "60px 60px",
-        }}
-      />
+        <div className="absolute -left-40 -top-32 h-[720px] w-[720px] rounded-full bg-blue-400/10 blur-[180px]" />
 
-      <div className="absolute -left-40 -top-40 h-[500px] w-[500px] rounded-full bg-orange-500/20 blur-[120px]" />
+        <div className="absolute right-[-180px] top-0 h-[700px] w-[700px] rounded-full bg-pink-300/20 blur-[180px]" />
 
-      <div className="absolute right-0 bottom-0 h-[550px] w-[550px] rounded-full bg-orange-500/20 blur-[150px]" />
+        <div className="absolute bottom-[-260px] left-1/2 h-[800px] w-[900px] -translate-x-1/2 rounded-full bg-indigo-400/10 blur-[220px]" />
 
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8 py-24">
+      </div>
 
-        <div className="grid lg:grid-cols-2 gap-24 items-center">
+      <div className="relative z-10">
 
-          {/* LEFT */}
+       
+        {/* ================= HERO ================= */}
+
+        <div
+          className="
+            mx-auto
+            grid
+            max-w-[1500px]
+            grid-cols-1
+            xl:grid-cols-2
+            items-center
+            gap-8
+            px-6
+            xl:px-8
+            pt-4
+            pb-20
+          "
+        >
+                    {/* ================= LEFT CONTENT ================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+            className="max-w-[680px]"
           >
-
             {/* Badge */}
 
-            <div className="inline-flex items-center gap-3 rounded-full border border-orange-400/20 bg-white/5 px-5 py-3 backdrop-blur-xl">
+<GradientBorder className="rounded-[25px] p-[1px]">
+  <motion.div
+    variants={fadeUp}
+    whileHover={{
+      y: -3,
+      scale: 1.02,
+    }}
+    className="
+      relative
+      inline-flex
+      items-center
+      gap-4
+      rounded-[24px]
+      bg-white
+      px-6
+      py-3
+    "
+  >
+    <div
+      className="
+        flex
+        h-8
+        w-12
+        items-center
+        justify-center
+        rounded-full
+        bg-gradient-to-br
+        from-indigo-500
+        via-blue-500
+        to-violet-500
+        text-white
+      "
+    >
+      <Computer size={20} />
+    </div>
 
-              <span className="h-2 w-2 rounded-full bg-orange-500 animate-pulse" />
+    <span className="text-lg font-semibold tracking-tight">
+      <span className="text-slate-700">
+        Delivering
+      </span>{" "}
 
-              <span className="text-sm tracking-wider text-orange-300 uppercase">
-                Verified B2B Contacts - Custom Research
-              </span>
+      <span className="bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-500 bg-clip-text text-transparent">
+        Future-Ready
+      </span>{" "}
 
-            </div>
-
+      <span className="text-slate-700">
+        Solutions
+      </span>
+    </span>
+  </motion.div>
+</GradientBorder>
             {/* Heading */}
 
-            <h1 className="mt-8 text-5xl md:text-6xl xl:text-7xl font-black leading-[1.05] text-white max-w-[700px]">
+            <motion.h1
+              variants={fadeUp}
+              className="
+                mt-12
+                text-5xl
+                md:text-6xl
+                lg:text-7xl
+                xl:text-[74px]
+                font-black
+                leading-tight
+                leading-[1.1]
+                tracking-[-2px]
+                text-slate-900
+              "
+            >
+              Transforming Ideas Into
 
-              Verified
-
-              <span className="text-orange-500">
-                {" "}Business Data
-              </span>
+              <br />
+<span
+  className="
+    inline-block
+    min-w-[700px]
+    min-h-[95px]
+    whitespace-nowrap
+    bg-gradient-to-r
+    from-indigo-600
+    via-blue-500
+    to-violet-500
+    bg-clip-text
+    text-transparent
+  "
+>
+  <TypeAnimation
+    sequence={[
+      "Website Development",
+      2000,
+      "Mobile App Development",
+      2000,
+      "Custom Software",
+      2000,
+      "AI Solutions",
+      2000,
+    ]}
+    speed={50}
+    repeat={Infinity}
+    cursor={false}
+  />
+</span>
 
               <br />
 
-              That Accelerates
-
-              <br />
-
-              Sales Growth
-
-            </h1>
+              For Modern Businesses
+            </motion.h1>
 
             {/* Description */}
 
-            <p className="mt-8 text-slate-300 text-xl leading-9 max-w-xl">
-
-              Verified B2B contact data, lead generation,
-              LinkedIn research, company profiling,
-              email discovery and custom B2B
-              research trusted by businesses worldwide.
-
-            </p>
+            <motion.p
+              variants={fadeUp}
+              className="
+                mt-8
+                max-w-[640px]
+                text-lg
+                md:text-xl
+                xl:text-[23px]
+                leading-9
+                text-slate-600
+              "
+            >
+              From websites and mobile apps to enterprise software and AI-powered solutions, we transform ideas into scalable digital products.
+              <br />
+              <br />
+            </motion.p>
 
             {/* Buttons */}
 
-            <div className="mt-10 flex flex-wrap gap-5">
+            <motion.div
+              variants={fadeUp}
+              className="mt-6 flex flex-wrap gap-5"
+            >
+              <motion.button
+                whileHover={{
+                  scale: 1.05,
+                  y: -3,
+                }}
+                whileTap={{
+                  scale: 0.97,
+                }}
+                className="
+                  group
+                  flex
+                  h-16
+                  items-center
+                  gap-4
+                  rounded-2xl
+                  bg-gradient-to-r
+                  from-indigo-600
+                  via-blue-600
+                  to-violet-500
+                  px-8
+                  text-lg
+                  font-semibold
+                  text-white
+                  shadow-[0_18px_55px_rgba(79,70,229,.35)]
+                "
+              >
+                Let's Build Together
 
-  {/* Contact */}
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 transition-transform duration-300 group-hover:translate-x-1">
 
-  <a
-    href="#contact"
-    className="group flex items-center gap-3 rounded-full bg-orange-500 px-8 py-5 text-lg font-semibold text-white transition hover:scale-105 hover:bg-orange-600"
-  >
-    Get Free Data Sample
+                  <ArrowRight size={20} />
 
-    <FaArrowRight className="transition group-hover:translate-x-1" />
-  </a>
+                </span>
+              </motion.button>
+<GradientBorder>
+              <motion.button
+                whileHover={{
+                  y: -3,
+                }}
+                whileTap={{
+                  scale: 0.98,
+                }}
+                className="
+                  h-16
+                  rounded-2xl
+                  border
+                  border-slate-200
+                  bg-white/80
+                  px-10
+                  text-lg
+                  font-semibold
+                  text-slate-800
+                  backdrop-blur-xl
+                  shadow-lg
+                "
+              >
+                Explore Services
+              </motion.button>
+              </GradientBorder>
+            </motion.div>
 
-  {/* Services */}
+            {/* Highlights */}
 
-  <a
-    href="#services"
-    className="rounded-full border border-white/20 px-8 py-5 text-lg text-white transition hover:bg-white hover:text-black"
-  >
-    Explore Services
-  </a>
-
-</div>
-            {/* Trust */}
-
-            <div className="grid grid-cols-2 gap-5 mt-14">
-
-              <div className="flex items-center gap-3 text-white">
-
-                <FaCheckCircle className="text-orange-500" />
-
-                Human Verified Data
-
-              </div>
-
-              <div className="flex items-center gap-3 text-white">
-
-                <FaCheckCircle className="text-orange-500" />
-
-                GDPR Compliant
-
-              </div>
-
-              <div className="flex items-center gap-3 text-white">
-
-                <FaCheckCircle className="text-orange-500" />
-
-                Tailored to Your Requirement
-
-              </div>
-
-              <div className="flex items-center gap-3 text-white">
-
-                <FaCheckCircle className="text-orange-500" />
-
-                Built From Scratch
-
-              </div>
-              <div className="flex items-center gap-3 text-white">
-
-                <FaCheckCircle className="text-orange-500" />
-
-                Fast Turnaround Based on Project Size
-
-              </div>
-
-            </div>
 
           </motion.div>
-
-          {/* RIGHT */}
+                    {/* ================= RIGHT CONTENT ================= */}
 
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: .8 }}
-            className="relative hidden lg:flex justify-center"
+            variants={fadeLeft}
+            initial="hidden"
+            animate="show"
+            className="relative flex items-center justify-end"
+          >
+            {/* Background Glow */}
+
+            <div className="absolute h-[550px] w-[550px] rounded-full bg-blue-500/10 blur-[120px]" />
+
+            <div className="absolute right-10 top-10 h-[180px] w-[180px] rounded-full bg-pink-400/20 blur-[80px]" />
+
+            {/* Floating Artwork */}
+                
+            <motion.div
+  animate={{
+    y: [0, -15, 0],
+    rotate: [0, 1, 0, -1, 0],
+  }}
+  transition={{
+    duration: 8,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
+  className="relative translate-x-12 -translate-y-30"
+>
+  <HeroArtwork />
+</motion.div>
+            
+          </motion.div>
+
+        </div>
+                {/* ================= STATS SECTION ================= */}
+
+        <div className="mx-auto -mt-4 max-w-[1400px] px-6 xl:px-8 pb-4">
+
+          <motion.div
+          
+            initial={{
+              opacity: 0,
+              y: 60,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.8,
+            }}
+            className="
+              grid
+              grid-cols-2
+              md:grid-cols-4
+              overflow-hidden
+              rounded-[32px]
+              border
+              border-white/60
+              bg-white/60
+              backdrop-blur-2xl
+              shadow-[0_30px_80px_rgba(15,23,42,.08)]
+            "
           >
 
-            {/* Floating Card */}
-
-            <motion.div
-
-              animate={{ y: [0,-10,0] }}
-
-              transition={{ repeat: Infinity, duration: 4 }}
-
-              className="absolute -left-20 top-32 bg-white rounded-3xl shadow-2xl px-8 py-6 z-20"
-
-            >
-
-              <h3 className="text-5xl font-bold text-orange-500">
-
-                Human
-
-              </h3>
-
-              <p className="text-gray-600 mt-2">
-
-                Verified Data
-
-              </p>
-
-            </motion.div>
-
-            {/* Dashboard */}
-
-            <div className="relative w-[480px] xl:w-[520px] rounded-[36px] border border-white/10 bg-white/10 backdrop-blur-xl shadow-[0_20px_80px_rgba(0,0,0,.35)] overflow-hidden">
-
-              {/* Header */}
-
-              <div className="border-b border-white/10 px-8 py-6 flex justify-between items-center">
-
-                <div>
-
-                  <h2 className="text-white text-3xl font-bold">
-
-                    Business Dashboard
-
-                  </h2>
-
-                  <p className="text-slate-400">
-
-                    Live Analytics
-
-                  </p>
-
-                </div>
-
-                <div className="flex gap-2">
-
-                  <div className="h-3 w-3 rounded-full bg-red-400" />
-
-                  <div className="h-3 w-3 rounded-full bg-yellow-400" />
-
-                  <div className="h-3 w-3 rounded-full bg-green-400" />
-
-                </div>
-
-              </div>
-
-              {/* Graph */}
-
-              <div className="p-8">
-
-                <div className="rounded-3xl border border-orange-500/20 bg-gradient-to-r from-orange-500/20 to-orange-600/5 p-8">
-
-                  <div className="flex items-end gap-3 h-40">
-
-                    {[35,65,50,90,70,110,95,130].map((h,i)=>(
-                      <motion.div
-                        key={i}
-                        initial={{height:0}}
-                        animate={{height:h}}
-                        transition={{delay:i*0.1}}
-                        className="flex-1 rounded-t-xl bg-orange-500"
-                      />
-                    ))}
-
-                  </div>
-
-                </div>
-                                {/* KPI Cards */}
-
-                <div className="grid grid-cols-2 gap-5 mt-6">
-
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-
-                    <div className="flex items-center gap-4">
-
-                      <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center">
-                        <FaUsers className="text-white" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">
-                          5+
-                        </h3>
-                        <p className="text-slate-400 text-sm">
-                          Happy Clients
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-
-                    <div className="flex items-center gap-4">
-
-                      <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center">
-                        <FaDatabase className="text-white" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">
-                          100%
-                        </h3>
-                        <p className="text-slate-400 text-sm">
-                          Human Verified Data
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-
-                    <div className="flex items-center gap-4">
-
-                      <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center">
-                        <FaChartLine className="text-white" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">
-                          Fast
-                        </h3>
-                        <p className="text-slate-400 text-sm">
-                          Turnaround
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
-
-                    <div className="flex items-center gap-4">
-
-                      <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center">
-                        <FaHeadset className="text-white" />
-                      </div>
-
-                      <div>
-                        <h3 className="text-2xl font-bold text-white">
-                          24/7
-                        </h3>
-                        <p className="text-slate-400 text-sm">
-                          Support
-                        </p>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-
-            {/* Floating Card */}
-
-            <motion.div
-              animate={{ x: [0, 8, 0] }}
-              transition={{
-                repeat: Infinity,
-                duration: 6,
-              }}
-              className="absolute right-8 -top-14 rounded-3xl bg-white px-8 py-6 shadow-2xl"
-            >
-
-              <h3 className="text-4xl font-bold text-orange-500">
-                5+
-              </h3>
-
-              <p className="mt-2 text-gray-600">
-                Trusted Clients
-              </p>
-
-            </motion.div>
+            <StatCard
+              icon={<Box size={28} />}
+              title="4+"
+              text="Projects Delivered"
+            />
+
+            <StatCard
+              icon={<Users size={28} />}
+              title="4+"
+              text="Happy Clients"
+            />
+
+            <StatCard
+              icon={<Trophy size={28} />}
+              title="100%"
+              text="Client Satisfaction"
+            />
+
+            <StatCard
+              icon={<Headphones size={28} />}
+              title="24/7"
+              text="Technical Support"
+            />
 
           </motion.div>
 
@@ -371,10 +404,116 @@ export default function Hero() {
 
       </div>
 
-      {/* Bottom Blur */}
-
-      <div className="absolute bottom-0 left-1/2 h-[250px] w-[900px] -translate-x-1/2 rounded-full bg-orange-500/20 blur-[120px]" />
-
     </section>
+  );
+}
+
+/* ==========================================================
+   TYPES
+========================================================== */
+
+interface StatProps {
+  icon: React.ReactNode;
+  title: string;
+  text: string;
+}
+
+/* ==========================================================
+   STAT CARD
+========================================================== */
+
+function StatCard({
+  icon,
+  title,
+  text,
+}: StatProps) {
+  return (
+    <motion.div
+      whileHover={{
+        y: -6,
+        scale: 1.03,
+      }}
+      transition={{
+        duration: 0.25,
+      }}
+      className="
+        group
+        relative
+        flex
+        items-center
+        gap-8
+        border-r
+        border-slate-200/60
+        px-10
+        py-10
+        last:border-r-0
+      "
+    >
+      {/* Icon */}
+
+      <div
+        className="
+          flex
+          h-16
+          w-16
+          items-center
+          justify-center
+          rounded-2xl
+          bg-gradient-to-br
+          from-indigo-100
+          via-blue-100
+          to-violet-100
+          text-indigo-600
+          shadow-md
+        "
+      >
+        {icon}
+      </div>
+
+      {/* Text */}
+
+      <div>
+
+        <h3
+          className="
+            text-3xl
+            md:text-4xl
+            font-black
+            text-slate-900
+          "
+        >
+          {title}
+        </h3>
+
+        <p
+          className="
+            mt-2
+            text-sm
+            md:text-base
+            text-slate-500
+          "
+        >
+          {text}
+        </p>
+
+      </div>
+
+      {/* Hover Effect */}
+<div
+  className="
+    absolute
+    inset-0
+    opacity-0
+    group-hover:opacity-100
+    transition-all
+    duration-500
+    pointer-events-none
+  "
+  style={{
+    background:
+      "linear-gradient(135deg, rgba(9, 10, 85, 0.06) 0%, rgba(60, 7, 60, 0.04) 50%, rgba(40, 12, 106, 0.06) 100%)",
+  }}
+/>
+    </motion.div>
   );
 }
