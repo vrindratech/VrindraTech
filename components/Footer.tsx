@@ -272,9 +272,9 @@ export default function Footer() {
                      <a
                     className="mt-1 block text-slate-300 transition hover:text-indigo-400"
                   >
-                    Ahmedabad,
+                    Indore,
                     <br />
-                    Gujarat,
+                    Madhya Pradesh,
                     <br />
                     India
                     </a>
