@@ -27,7 +27,7 @@ const projects = [
     theme: "orange",
     delivery: "Delivered in just 8 days",
     visual: "video",
-    video: "/projects/portfolio-preview.mp4",
+    video: "/Projects/portfolio-preview.mp4",
   },
   {
     number: "02",
@@ -40,7 +40,7 @@ const projects = [
     icon: ShoppingBag,
     theme: "purple",
     visual: "video",
-    video: "/projects/portfoliogm.mp4",
+    video: "/Projects/portfoliogm.mp4",
   },
 ];
 
