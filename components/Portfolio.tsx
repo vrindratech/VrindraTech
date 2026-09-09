@@ -50,7 +50,7 @@ const testimonial = {
   company: "JupitoData",
   quote:
     "They understood exactly what we needed and delivered a great website.",
-  video: "/projects/client-feedbacks.mp4",
+  video: "/Projects/client-feedbacks.mp4",
   linkedin: "https://www.linkedin.com/company/jupitodata/",
 };
 
