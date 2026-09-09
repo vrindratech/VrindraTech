@@ -238,7 +238,7 @@ export default function WhyJupitodata() {
 
             <Reveal delay={0.08}>
               <h2 className="max-w-4xl text-4xl font-black leading-[1.02] tracking-[-0.045em] text-slate-950 sm:text-5xl md:text-6xl lg:text-[64px]">
-                Jupitodata Delivers
+                VrindraTech Delivers
                 <span className="block bg-gradient-to-r from-indigo-600 via-indigo-600 to-indigo-600 bg-clip-text text-transparent">
               Scalable, Secure
                 </span>  
