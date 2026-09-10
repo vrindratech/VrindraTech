@@ -14,7 +14,7 @@ const projects = [
     title: "JupitoData",
     category: "B2B Data & Lead Generation",
     description:
-      "A modern digital experience designed to showcase B2B data, lead generation and research solutions.",
+      "Business Outcomes - 🟢 Stronger Online Presence  🟢 Improved Customer Engagement 🟢 Better Lead Generation ",
     video: "/Projects/portfolio-preview.mp4",
     website: "https://www.jupitodata.com",
     technologies: [
@@ -32,7 +32,7 @@ const projects = [
   title: "Gupta Mobiles",
   category: "Business & E-Commerce",
   description:
-    "A modern business website designed to create a strong digital presence and improve customer engagement.",
+    " 🟢 Development in Progress",
   video: "/Projects/portfoliogm.mp4",
   website: "https://www.guptamobiles.com",
   technologies: [

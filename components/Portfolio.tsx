@@ -21,11 +21,30 @@ const projects = [
     category: "WEB DEVELOPMENT",
     type: "Corporate Website",
     description:
-      "A modern digital experience designed to strengthen the brand's online presence and connect businesses with their customers.",
+
+  "A professional B2B website created for JupitoData to present its data solutions, explain its services clearly, and give potential business clients an easy way to understand what the company offers.",
+
+
+
+challenge:
+
+  "JupitoData needed a clear and professional website to present its B2B data solutions, organize its services, and communicate its offering effectively to potential business clients.",
+
+
+
+solution:
+
+  "We designed and developed a responsive corporate website with structured service sections, clear messaging, and a straightforward navigation experience focused on helping visitors understand JupitoData's data solutions.",
+
+
+
+result:
+
+  "The new website helped JupitoData reach more businesses, attract potential clients, and create more opportunities for client growth.",
     technologies: ["Next.js", "React", "SEO"],
     icon: Globe,
     theme: "orange",
-    delivery: "Delivered in just 8 days",
+    delivery: "🟢 Delivered in just 8 days",
     visual: "video",
     video: "/Projects/portfolio-preview.mp4",
   },
@@ -35,10 +54,20 @@ const projects = [
     category: "E-COMMERCE",
     type: "E-Commerce Platform",
     description:
-      "A conversion-focused online shopping experience built around a seamless and engaging customer journey.",
+  "A modern mobile retail website designed to showcase Gupta Mobiles' products, make it easier for customers to explore available devices, and create a stronger online presence.",
+
+challenge:
+  "Gupta Mobiles wanted to establish a professional online presence where customers could easily discover its mobile products and learn more about what the store offers.",
+
+solution:
+  "We developed a responsive product-focused website with clear product presentation, intuitive navigation, and a mobile-friendly experience that makes browsing easier for customers.",
+
+result:
+  "Gupta Mobiles now has a professional digital storefront that gives customers an easy way to explore its mobile offerings and connect with the business online.",
     technologies: ["Next.js", "Node.js", "MongoDB"],
     icon: ShoppingBag,
     theme: "purple",
+    delivery: "In Development",
     visual: "video",
     video: "/Projects/portfoliogm.mp4",
   },
@@ -893,9 +922,22 @@ function ProjectCard({
                 {project.type}
               </p>
 
-              <p className="mt-7 max-w-md text-base leading-7 text-slate-500">
-                {project.description}
-              </p>
+              <div className="mt-7 max-w-md space-y-5">
+                {[
+                  { label: "The challenge", value: project.challenge },
+                  { label: "What we built", value: project.solution },
+                  { label: "Result", value: project.result },
+                ].map((item) => (
+                  <div key={item.label}>
+                    <h4 className="text-sm font-semibold text-slate-950">
+                      {item.label}
+                    </h4>
+                    <p className="mt-1.5 text-sm leading-6 text-slate-500">
+                      {item.value}
+                    </p>
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-8 flex flex-wrap gap-2">
                 {project.technologies.map((technology) => (

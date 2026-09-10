@@ -294,14 +294,19 @@ export default function Footer() {
 
         <div className="flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
 
-          <p className="text-center text-sm text-slate-500 md:text-left">
-            © {new Date().getFullYear()}{" "}
-              <span className="font-semibold text-white">
-              Vrindra Tech
-            </span>
-            . All Rights Reserved.
+          <p className="text-gray-500">
+            © 2026 VrindraTech. All Rights Reserved.{" "}
+            <span className="mx-1 text-gray-600">|</span>{" "}
+            Designed &amp; Developed by{" "}
+            <a
+              href="https://vrindratech.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-indigo-500 transition-colors hover:text-indigo-400"
+            >
+              VrindraTech
+            </a>
           </p>
-
           <div className="flex flex-wrap items-center gap-8">
 
             <Link

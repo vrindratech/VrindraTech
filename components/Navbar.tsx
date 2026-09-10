@@ -76,7 +76,7 @@ export default function Navbar() {
               hover:-translate-y-0.5
             "
           >
-            Start Project
+            Get Free Consultation →
           </Link>
         </div>
 
@@ -142,7 +142,7 @@ export default function Navbar() {
                 hover:shadow-xl
               "
             >
-              Start Project
+              Get Free Consultation →
             </Link>
 
           </div>
