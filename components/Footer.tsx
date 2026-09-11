@@ -59,7 +59,7 @@ const companyLinks = [
 const socialLinks = [
   {
     icon: FaLinkedinIn,
-    href: "https://www.linkedin.com/in/vrindra-tech-80572b433/",
+    href: "https://www.linkedin.com/company/144989905/admin/dashboard/",
     color: "#0A66C2",
   },
   // {
