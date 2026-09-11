@@ -211,7 +211,7 @@ export default function Contact() {
                 </p>
 
                 <h4 className="text-xl font-semibold">
-                  Ahmedabad, Gujarat
+                  Indore, Madhya Pradesh, India
                 </h4>
               </div>
             </div>
