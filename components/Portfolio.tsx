@@ -44,7 +44,7 @@ result:
     technologies: ["Next.js", "React", "SEO"],
     icon: Globe,
     theme: "orange",
-    delivery: "🟢 Delivered in just 8 days",
+    delivery: "Delivered in just 8 days",
     visual: "video",
     video: "/Projects/portfolio-preview.mp4",
   },
