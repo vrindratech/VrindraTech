@@ -655,7 +655,7 @@ export default function About() {
                   <div className="h-10 w-px bg-slate-200" />
 
                   <a
-                    href="https://www.linkedin.com/in/vrindra-tech-80572b433/"
+                    href="https://www.linkedin.com/in/rashmi-dhanotiya-96b435118/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 text-sm font-semibold text-indigo-600 transition hover:text-indigo-600"
