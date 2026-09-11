@@ -261,7 +261,7 @@ Response time: Within 30 days`,
                     We're here to help. If you have any concerns or questions about our privacy practices, contact our team directly.
                   </p>
                   <Link
-                    href="\#contact"
+                    href="/#contact"
                     className="inline-flex items-center gap-2 bg-white text-indigo-600 px-6 py-3 rounded-xl font-semibold hover:bg-indigo-50 transition-colors shadow-lg hover:shadow-xl"
                   >
                     Get in Touch
