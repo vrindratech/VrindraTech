@@ -43,119 +43,146 @@ const containerVariants = {
 };
 
 export default function PrivacyPolicyPage() {
-  const sections = [
-    {
-      title: "1. Introduction",
-      icon: FileText,
-      color: "from-indigo-500 to-blue-500",
-      content: `Vrindra Tech Technologies ("we", "our", "us", or "Company") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+ const sections = [
+  {
+    title: "1. Introduction",
+    icon: FileText,
+    color: "from-indigo-500 to-blue-500",
+    content: `VrindraTech respects your privacy and is committed to protecting your personal information. This Privacy Policy explains what information we collect, how we use it, and how we protect it when you use our website or contact us.`,
+  },
 
-Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our services.`,
-    },
-    {
-      title: "2. Information We Collect",
-      icon: Database,
-      color: "from-indigo-500 to-violet-500",
-      content: `We may collect information about you in a variety of ways:
+  {
+    title: "2. Information We Collect",
+    icon: Database,
+    color: "from-indigo-500 to-violet-500",
+    content: `We may collect information that you provide directly, including:
 
-• Personal Data: Name, email, phone, company name, project details
-• Automatic Data Collection: IP address, browser type, OS, referring URLs, pages visited
-• Cookies & Tracking: Usage patterns and preferences for enhanced experience`,
-    },
-    {
-      title: "3. How We Use Your Information",
-      icon: Zap,
-      color: "from-indigo-500 to-blue-500",
-      content: `• Provide and improve our services
-• Process inquiries and respond to requests
-• Send marketing communications (with consent)
-• Monitor and analyze trends and activities
-• Detect and prevent technical issues
-• Comply with legal requirements
-• Personalize your experience
-• Conduct research and analytics`,
-    },
-    {
-      title: "4. Data Security",
-      icon: Lock,
-      color: "from-indigo-500 to-violet-500",
-      content: `We implement comprehensive security measures:
+• Name
+• Email address
+• Phone number
+• Company name
+• Project or service requirements
+• Information submitted through our contact forms
 
-• SSL/TLS encrypted data transmission
-• Secure password authentication
-• Regular security audits and updates
-• Limited access to personal information
-• Confidentiality agreements with all staff
+We may also collect basic technical information such as IP address, browser type, device information, and website usage data.`,
+  },
 
-While we strive to protect your data, no system is 100% secure.`,
-    },
-    {
-      title: "5. Information Sharing",
-      icon: Share2,
-      color: "from-indigo-500 to-violet-500",
-      content: `We do not sell or rent your data. We may share information:
+  {
+    title: "3. How We Use Your Information",
+    icon: Zap,
+    color: "from-indigo-500 to-blue-500",
+    content: `We use your information to:
 
-• With service providers assisting us
-• When required by law
-• To protect our rights and security
-• In connection with business transactions
-• With your explicit consent`,
-    },
-    {
-      title: "6. Third-Party Links",
-      icon: Globe,
-      color: "from-sky-400 to-sky-500",
-      content: `Our website contains links to third-party sites. We are not responsible for their privacy practices. We encourage you to review external websites' privacy policies before sharing information.`,
-    },
-    {
-      title: "7. Your Privacy Rights",
-      icon: CheckCircle,
-      color: "from-indigo-500 to-violet-500",
-      content: `• Right to Access your personal information
-• Right to Correction of inaccurate data
-• Right to Deletion of your information
-• Right to Opt-Out of marketing communications
-• Right to Data Portability
+• Respond to inquiries and requests
+• Discuss and provide our services
+• Understand project requirements
+• Communicate with you about projects
+• Improve our website and services
+• Maintain website security
+• Comply with applicable legal requirements`,
+  },
 
-Contact us to exercise these rights.`,
-    },
-    {
-      title: "8. Cookies & Tracking",
-      icon: Eye,
-      color: "from-pink-400 to-pink-500",
-      content: `We use cookies to improve your experience. You can control settings through your browser. We use analytics tools like Google Analytics to understand behavior and improve services. Disabling cookies may affect functionality.`,
-    },
-    {
-      title: "9. Children's Privacy",
-      icon: Users,
-      color: "from-orange-400 to-orange-500",
-      content: `Our services are not directed to children under 13 years. We do not knowingly collect information from children under 13. If discovered, we will delete such information immediately.`,
-    },
-    {
-      title: "10. International Transfers",
-      icon: Globe,
-      color: "from-violet-400 to-violet-500",
-      content: `Your information may be transferred, stored, and processed in countries outside your residence. These countries may have different data protection laws than your home country.`,
-    },
-    {
-      title: "11. Policy Updates",
-      icon: Zap,
-      color: "from-fuchsia-400 to-fuchsia-500",
-      content: `We may update this policy to reflect changes in practices or legal requirements. Material changes will be posted on our website with an updated date. Continued use indicates acceptance.`,
-    },
-    {
-      title: "12. Contact Us",
-      icon: Mail,
-      color: "from-rose-400 to-rose-500",
-      content: `For privacy questions, reach out to:
+  {
+    title: "4. Data Security",
+    icon: Lock,
+    color: "from-indigo-500 to-violet-500",
+    content: `We take reasonable technical and organizational measures to protect your personal information from unauthorized access, loss, misuse, alteration, or disclosure.
 
-Email: privacy@Vrindra Tech.com
-Phone: +91 XXXXXXX
-Address: [Your Company Address]
+However, no method of internet transmission or electronic storage is completely secure.`,
+  },
 
-Response time: Within 30 days`,
-    },
-  ];
+  {
+    title: "5. Information Sharing",
+    icon: Share2,
+    color: "from-indigo-500 to-violet-500",
+    content: `VrindraTech does not sell or rent your personal information.
+
+We may share information only when necessary with:
+
+• Service providers supporting our website or services
+• Technology and infrastructure providers
+• Government or legal authorities when required by law
+• Parties involved in a legitimate business transaction
+
+We only share information when reasonably necessary for the relevant purpose.`,
+  },
+
+  {
+    title: "6. Third-Party Links",
+    icon: Globe,
+    color: "from-sky-400 to-sky-500",
+    content: `Our website may contain links to third-party websites or services. We are not responsible for their privacy practices or content.
+
+We recommend reviewing the privacy policies of third-party websites before providing them with personal information.`,
+  },
+
+  {
+    title: "7. Your Privacy Rights",
+    icon: CheckCircle,
+    color: "from-indigo-500 to-violet-500",
+    content: `Subject to applicable law, you may have the right to:
+
+• Request access to your personal information
+• Request correction of inaccurate information
+• Request deletion where legally applicable
+• Withdraw consent where applicable
+• Opt out of certain communications
+
+You can contact us to make a privacy-related request.`,
+  },
+
+  {
+    title: "8. Cookies & Tracking",
+    icon: Eye,
+    color: "from-pink-400 to-pink-500",
+    content: `We may use cookies and analytics technologies to understand website usage, improve performance, and enhance your experience.
+
+We may use services such as Google Analytics for website analytics.
+
+You can control or disable cookies through your browser settings. Some website features may not work properly if cookies are disabled.`,
+  },
+
+  {
+    title: "9. Children's Privacy",
+    icon: Users,
+    color: "from-orange-400 to-orange-500",
+    content: `Our website and services are intended for general and business use. We do not knowingly collect personal information from children where such collection is prohibited by applicable law.
+
+If you believe that a child has provided personal information to us, please contact us so we can take appropriate action.`,
+  },
+
+  {
+    title: "10. International Transfers",
+    icon: Globe,
+    color: "from-violet-400 to-violet-500",
+    content: `VrindraTech may work with clients and technology providers located in different countries. As a result, personal information may be processed or stored outside your country of residence.
+
+Where required, we take reasonable steps to ensure that personal information is handled appropriately and securely.`,
+  },
+
+  {
+    title: "11. Policy Updates",
+    icon: Zap,
+    color: "from-fuchsia-400 to-fuchsia-500",
+    content: `We may update this Privacy Policy when our services, practices, or legal requirements change.
+
+Any updates will be published on this page with the revised "Last Updated" date.
+
+We recommend reviewing this page periodically for the latest information.`,
+  },
+
+  {
+    title: "12. Contact Us",
+    icon: Mail,
+    color: "from-rose-400 to-rose-500",
+    content: `If you have questions about this Privacy Policy or want to make a privacy-related request, please contact us:
+
+Email: vrindratech@gmail.com
+Phone: +91 8878535837
+Response time: Within 24 Hours`,
+
+  },
+];
 
   return (
     <main className="bg-white overflow-hidden">
@@ -199,7 +226,7 @@ Response time: Within 30 days`,
             variants={fadeUp}
             className="text-sm text-gray-400"
           >
-            Last Updated: January 2024
+            Last Updated: September 2026
           </motion.p>
         </motion.div>
       </section>
