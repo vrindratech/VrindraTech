@@ -15,6 +15,7 @@ const navItems = [
   //{ label: "Testimonials", href: "/testimonials" },
   //{ label: "Programs", href: "/training-internship" },
   { label: "About", href: "/about" },
+  { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/#contact" },
 ];
 

@@ -7,6 +7,7 @@ import TechnologySection from "@/components/Technology/TechnologySection";
 import Testimonials from "@/components/Testimonials";
 import OurWorkProcess from "@/components/OurWorkProcess";
 import OurWork from "@/components/OurWork";
+import FAQ from "@/components/FAQ";
 
 
 
@@ -20,6 +21,7 @@ import OurWork from "@/components/OurWork";
      <WhyChooseUs />
      <Testimonials/>
      <OurWork/>
+    <FAQ />
      < CTA />
     </>
   );

@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AIChatWidget from "@/components/AIChatWidget";
 import Script from "next/script";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vrindratech.com"),
@@ -79,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={manrope.variable}>
+      <body className="antialiased">
         {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LN9SGDVNC0"
@@ -115,6 +110,7 @@ export default function RootLayout({
         {children}
 
         <Footer />
+        <AIChatWidget />
       </body>
     </html>
   );

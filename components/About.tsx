@@ -144,12 +144,8 @@ className="relative flex justify-center"
                   className="w-44 h-44 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 shadow-[0_20px_60px_rgba(249,115,22,0.35)] flex flex-col items-center justify-center"
                 >
 
-                  <div className="text-5xl mb-2">
-                     <img
-                     src="/images/J.png"
-                     alt="JupitoData"
-                     className="h-14 w-auto"
-                     />
+                  <div className="mb-2 flex h-14 w-14 items-center justify-center rounded-full bg-white/20 text-3xl font-black text-white shadow-inner">
+                    J
                   </div>
 
                   <h3 className="text-white text-2xl font-bold text-center">

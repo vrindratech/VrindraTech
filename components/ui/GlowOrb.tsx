@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function GlassOrb() {
@@ -15,13 +14,7 @@ export default function GlassOrb() {
       }}
       className="absolute right-0 top-20"
     >
-      <Image
-        src="/images/glass-orb.webp"
-        width={180}
-        height={180}
-        alt=""
-        priority
-      />
+      <div className="h-[180px] w-[180px] rounded-full bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.95),rgba(96,165,250,0.7),rgba(59,130,246,0.28),rgba(15,23,42,0.08))] shadow-[0_0_80px_rgba(59,130,246,0.35)]" aria-hidden="true" />
     </motion.div>
   );
 }

@@ -59,7 +59,7 @@ export default function Portfolio() {
   <div className="bg-slate-100">
 
     <img
-      src="/images/projects/jupitodata.jpg"
+      src="/images/jupitodata-laptop.png"
       alt="JupitoData"
       className="h-full w-full object-cover"
     />
