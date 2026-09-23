@@ -66,21 +66,25 @@ const socialLinks = [
     href: "https://www.linkedin.com/company/144989905/admin/dashboard/",
     color: "#0A66C2",
   },
+
   // {
   //   icon: FaInstagram,
   //   href: "#",
   //   color: "#E4405F",
   // },
+
   // {
-  //   icon: FaFacebookF,6
+  //   icon: FaFacebookF,
   //   href: "#",
   //   color: "#1877F2",
   // },
+
   // {
   //   icon: FaYoutube,
   //   href: "#",
   //   color: "#FF0000",
   // },
+
   {
     icon: FaWhatsapp,
     href: "https://wa.me/918878535837",
@@ -91,20 +95,24 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative mt-4 overflow-hidden bg-[#08111F] text-white">
-      {/* Background Blur */}
+
+      {/* ================= BACKGROUND BLUR ================= */}
+
       <div className="absolute -left-40 top-0 h-[420px] w-[420px] rounded-full bg-indigo-500/10 blur-[170px]" />
+
       <div className="absolute bottom-0 right-0 h-[320px] w-[320px] rounded-full bg-violet-500/10 blur-[170px]" />
 
       <div className="relative mx-auto max-w-[1400px] px-6">
-      
-       
 
         {/* ================= GRID ================= */}
 
         <div className="mt-4 grid gap-16 lg:grid-cols-12">
-          {/* Company */}
+
+
+          {/* ================= COMPANY ================= */}
 
           <div className="lg:col-span-5">
+
             <Image
               src="/logo.png"
               alt="Vrindra Tech"
@@ -118,112 +126,165 @@ export default function Footer() {
               applications and digital products for ambitious businesses.
             </p>
 
+
+            {/* ================= FOLLOW US ================= */}
+
             <div className="mt-12">
+
               <div className="flex items-center gap-3">
+
                 <div className="h-8 w-1 rounded-full bg-indigo-400" />
 
                 <h3 className="text-2xl font-bold">
                   Follow Us
                 </h3>
+
               </div>
 
+
               <div className="mt-8 flex flex-wrap gap-4">
+
                 {socialLinks.map((social, index) => {
+
                   const Icon = social.icon;
 
                   return (
                     <motion.a
                       key={index}
                       href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       whileHover={{
                         y: -6,
                         scale: 1.08,
                       }}
-                      transition={{ duration: 0.25 }}
+                      transition={{
+                        duration: 0.25,
+                      }}
                       onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = social.color;
+                        e.currentTarget.style.backgroundColor =
+                          social.color;
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = "#111C2F";
+                        e.currentTarget.style.backgroundColor =
+                          "#111C2F";
                       }}
                       className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#111C2F] transition-all duration-300"
                     >
                       <Icon className="text-2xl text-gray-300 transition duration-300 hover:text-white" />
                     </motion.a>
                   );
+
                 })}
+
               </div>
+
             </div>
+
           </div>
-                    {/* ================= SERVICES ================= */}
 
-         <div className="lg:col-span-2">
-  <div className="flex items-center gap-3">
-    <div className="h-8 w-1 rounded-full bg-cyan-400" />
 
-    <h3 className="text-xl font-bold">
-      Services
-    </h3>
-  </div>
-
-  <ul className="mt-8 space-y-4">
-    {services.map((service) => (
-      <li
-        key={service}
-        className="text-slate-400 transition-all duration-300 hover:pl-2 hover:text-indigo-400"
-      >
-        {service}
-      </li>
-    ))}
-  </ul>
-</div>
-
-          {/* ================= COMPANY ================= */}
+          {/* ================= SERVICES ================= */}
 
           <div className="lg:col-span-2">
+
             <div className="flex items-center gap-3">
+
+              <div className="h-8 w-1 rounded-full bg-cyan-400" />
+
+              <h3 className="text-xl font-bold">
+                Services
+              </h3>
+
+            </div>
+
+
+            <ul className="mt-8 space-y-4">
+
+              {services.map((service) => (
+
+                <li
+                  key={service}
+                  className="text-slate-400 transition-all duration-300 hover:pl-2 hover:text-indigo-400"
+                >
+                  {service}
+                </li>
+
+              ))}
+
+            </ul>
+
+          </div>
+
+
+          {/* ================= COMPANY LINKS ================= */}
+
+          <div className="lg:col-span-2">
+
+            <div className="flex items-center gap-3">
+
               <div className="h-8 w-1 rounded-full bg-indigo-500" />
 
               <h3 className="text-xl font-bold">
                 Company
               </h3>
+
             </div>
 
+
             <ul className="mt-8 space-y-4">
+
               {companyLinks.map((item) => (
+
                 <li key={item.name}>
+
                   <Link
                     href={item.href}
                     className="group text-slate-400 transition-all duration-300 hover:pl-2 hover:text-indigo-300"
                   >
                     {item.name}
                   </Link>
+
                 </li>
+
               ))}
+
             </ul>
+
           </div>
+
 
           {/* ================= CONTACT ================= */}
 
           <div className="lg:col-span-3">
+
             <div className="flex items-center gap-3">
+
               <div className="h-8 w-1 rounded-full bg-emerald-400" />
 
               <h3 className="text-xl font-bold">
                 Get In Touch
               </h3>
+
             </div>
+
 
             <div className="mt-8 space-y-7">
 
-              {/* Phone */}
+
+              {/* ================= PHONE ================= */}
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
                   <HiOutlinePhone className="text-xl" />
+
                 </div>
 
+
                 <div>
+
                   <p className="text-sm text-slate-500">
                     Phone
                   </p>
@@ -234,17 +295,25 @@ export default function Footer() {
                   >
                     +91 8878535837
                   </a>
+
                 </div>
+
               </div>
 
-              {/* Email */}
+
+              {/* ================= EMAIL ================= */}
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
                   <HiOutlineEnvelope className="text-xl" />
+
                 </div>
 
+
                 <div>
+
                   <p className="text-sm text-slate-500">
                     Email
                   </p>
@@ -257,51 +326,134 @@ export default function Footer() {
                   >
                     vrindratech@gmail.com
                   </a>
+
                 </div>
+
               </div>
 
-              {/* Address */}
+
+              {/* ================= ADDRESS ================= */}
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#111C2F] text-indigo-400">
+
                   <HiOutlineMapPin className="text-xl" />
+
                 </div>
 
+
                 <div>
+
                   <p className="text-sm text-slate-500">
-                    Location                  
+                    Location
                   </p>
 
                   <p className="mt-1 leading-7 text-slate-300">
-                     <a
-                    className="mt-1 block text-slate-300 transition hover:text-indigo-400"
-                  >
                     Indore,
                     <br />
                     Madhya Pradesh,
                     <br />
                     India
-                    </a>
                   </p>
+
                 </div>
+
+              </div>
+
+
+              {/* ================= UDYAM REGISTERED MSME ================= */}
+
+              <div className="mt-8">
+
+                <div className="relative overflow-hidden rounded-2xl border border-indigo-500/70 bg-gradient-to-br from-[#111C2F] to-[#0B1628] px-5 py-4 shadow-[0_0_25px_rgba(99,102,241,0.08)]">
+
+                  <div className="flex items-center gap-4">
+
+
+                    {/* ================= UDYAM EMBLEM ================= */}
+
+                    <div className="flex h-[72px] w-[72px] shrink-0 items-center justify-center border-r border-slate-600/60 pr-4">
+
+                      <Image
+                        src="/udyam-emblem.png"
+                        alt="Udyam Registration"
+                        width={52}
+                        height={62}
+                        className="h-auto w-[48px] object-contain"
+                      />
+
+                    </div>
+
+
+                    {/* ================= UDYAM INFORMATION ================= */}
+
+                    <div className="min-w-0">
+
+                      <p className="text-[13px] font-semibold leading-6 text-white">
+                        Udyam Registered MSME
+                      </p>
+
+
+                      <p className="mt-1 text-[12px] font-medium tracking-wide text-slate-400">
+                        UDYAM-MP-23-0312086
+                      </p>
+
+
+                      {/* ================= VIEW CERTIFICATE ================= */}
+
+                      <a
+                        href="/udyam-certificate.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group mt-1 inline-flex items-center gap-1 text-[15px] font-medium text-indigo-400 transition-colors duration-300 hover:text-indigo-300"
+                      >
+
+                        View Certificate
+
+                        <HiOutlineArrowRight
+                          className="transition-transform duration-300 group-hover:translate-x-1"
+                        />
+
+                      </a>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
               </div>
 
             </div>
+
           </div>
 
         </div>
 
-        {/* Divider */}
+
+        {/* ================= DIVIDER ================= */}
 
         <div className="mt-20 border-t border-slate-800" />
-                {/* ================= Bottom ================= */}
+
+
+        {/* ================= BOTTOM ================= */}
 
         <div className="flex flex-col items-center justify-between gap-6 py-8 md:flex-row">
 
+
+          {/* Copyright */}
+
           <p className="text-gray-500">
-            © 2026 VrindraTech. All Rights Reserved.{" "}
-            <span className="mx-1 text-gray-600">|</span>{" "}
+
+            © 2026 VrindraTech. All Rights Reserved.
+
+            <span className="mx-1 text-gray-600">
+              |
+            </span>
+
             Designed &amp; Developed by{" "}
+
             <a
               href="https://vrindratech.com/"
               target="_blank"
@@ -310,7 +462,12 @@ export default function Footer() {
             >
               VrindraTech
             </a>
+
           </p>
+
+
+          {/* Bottom Links */}
+
           <div className="flex flex-wrap items-center gap-8">
 
             <Link
@@ -320,12 +477,16 @@ export default function Footer() {
               Privacy Policy
             </Link>
 
+
             <Link
               href="/terms-and-conditions"
               className="text-sm text-slate-400 transition hover:text-indigo-400"
             >
-              Terms & Conditions
+              Terms &amp; Conditions
             </Link>
+
+
+            {/* Back To Top */}
 
             <button
               type="button"
@@ -337,9 +498,13 @@ export default function Footer() {
               }
               className="group flex items-center gap-2 text-sm font-semibold text-indigo-300 transition hover:text-white"
             >
+
               Back to Top
 
-              <HiOutlineArrowRight className="-rotate-90 transition-transform duration-300 group-hover:-translate-y-1" />
+              <HiOutlineArrowRight
+                className="-rotate-90 transition-transform duration-300 group-hover:-translate-y-1"
+              />
+
             </button>
 
           </div>
