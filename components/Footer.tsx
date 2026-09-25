@@ -400,23 +400,6 @@ export default function Footer() {
                       </p>
 
 
-                      {/* ================= VIEW CERTIFICATE ================= */}
-
-                      <a
-                        href="/udyam-certificate.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group mt-1 inline-flex items-center gap-1 text-[15px] font-medium text-indigo-400 transition-colors duration-300 hover:text-indigo-300"
-                      >
-
-                        View Certificate
-
-                        <HiOutlineArrowRight
-                          className="transition-transform duration-300 group-hover:translate-x-1"
-                        />
-
-                      </a>
-
                     </div>
 
                   </div>
