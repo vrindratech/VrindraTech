@@ -189,12 +189,12 @@ export default function Contact() {
                 </p>
 
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=vrindratech@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=support@vrindratech.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-md font-semibold hover:text-cyan-100"
                 >
-                  vrindratech@gmail.com
+                  support@vrindratech.com
                 </a>
               </div>
             </div>

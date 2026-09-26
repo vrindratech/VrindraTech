@@ -319,12 +319,12 @@ export default function Footer() {
                   </p>
 
                   <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=vrindratech@gmail.com"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@vrindratech.com"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-1 block text-slate-300 transition hover:text-indigo-400"
                   >
-                    vrindratech@gmail.com
+                    support@vrindratech.com
                   </a>
 
                 </div>

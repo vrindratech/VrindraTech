@@ -177,7 +177,7 @@ We recommend reviewing this page periodically for the latest information.`,
     color: "from-rose-400 to-rose-500",
     content: `If you have questions about this Privacy Policy or want to make a privacy-related request, please contact us:
 
-Email: vrindratech@gmail.com
+Email: support@vrindratech.com
 Phone: +91 8878535837
 Response time: Within 24 Hours`,
 
