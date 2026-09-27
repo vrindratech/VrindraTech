@@ -560,7 +560,7 @@ export default function AIChatWidget() {
           access_key: "c897759e-db41-456d-9e7c-77c66c37d923",
           subject: "📅 Call Request — VrindraTech",
           from_name: "VrindraTech Website Chat",
-          to: "support@vrindratech.com",
+          to: "vrindratech@gmail.com",
           preferred_date: schedule.date,
           preferred_time: schedule.time,
           project_type: flow?.label || "Not specified",
