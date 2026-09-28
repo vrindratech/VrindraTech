@@ -601,15 +601,15 @@ const benefits = [
   },
   {
     icon: Rocket,
-    title: "Innovation at Core",
+    title: "Regular Updates",
     description:
-      "We use emerging technologies to drive real-world impact.",
+      "Stay informed at every stage.",
   },
   {
     icon: Headphones,
-    title: "End-to-End Support",
+    title: "Review & Feedback",
     description:
-      "From strategy to deployment and beyond, we've got you covered.",
+      "Share feedback and shape the product as we build",
   },
 ];
 
