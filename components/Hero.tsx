@@ -398,7 +398,7 @@ export default function Hero() {
             <StatCard
               icon={<Headphones size={28} />}
               title="24/7"
-              text="Technical Support"
+              text="Expert Assistance"
             />
 
           </motion.div>
