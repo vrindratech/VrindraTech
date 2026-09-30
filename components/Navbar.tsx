@@ -11,7 +11,7 @@ const navItems = [
   // Programs
 
   { label: "Portfolio", href: "/portfolio" },
-  // { label: "Career", href: "#career" },
+  { label: "Career", href: "/career" },
   //{ label: "Testimonials", href: "/testimonials" },
   //{ label: "Programs", href: "/training-internship" },
   { label: "About", href: "/about" },

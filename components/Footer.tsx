@@ -47,6 +47,10 @@ const companyLinks = [
     href: "/portfolio",
   },
   {
+    name: "Career",
+    href: "/career",
+  },
+  {
     name: "Contact",
     href: "/#contact",
   },
@@ -325,6 +329,14 @@ export default function Footer() {
                     className="mt-1 block text-slate-300 transition hover:text-indigo-400"
                   >
                     vrindratech@gmail.com
+                  </a>
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=support@vrindratech.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 block text-slate-300 transition hover:text-indigo-400"
+                  >
+                    support@vrindratech.com
                   </a>
 
                 </div>
