@@ -216,22 +216,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Hours */}
-            <div className="mt-8 flex gap-5">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15">
-                <HiOutlineClock className="text-2xl" />
-              </div>
 
-              <div>
-                <p className="text-blue-100">
-                  Working Hours
-                </p>
-
-                <h4 className="text-xl font-semibold">
-                  Mon – Sat | 10 AM – 7 PM
-                </h4>
-              </div>
-            </div>
 
             {/* Social */}
             <div className="mt-12 flex gap-4">
