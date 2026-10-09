@@ -131,9 +131,40 @@ export default function Footer() {
             </p>
 
 
+{/* ================= CHANNEL PARTNER ================= */}
+
+<div className="mt-8 mb-10">
+  <div className="mb-5 flex items-center gap-3">
+    <div className="h-7 w-1 rounded-full bg-cyan-400" />
+
+    <h3 className="text-lg font-bold text-white">
+      Our Channel Partner
+    </h3>
+  </div>
+
+  <div className="inline-flex flex-col items-start gap-2.5">
+    {/* AskQuorum AI Logo */}
+    <div className="rounded-lg bg-white p-2 shadow-md shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-indigo-500/10">
+      <Image
+        src="/images/askquorum-logo-navy.png"
+        alt="AskQuorum AI - Channel Partner"
+        width={180}
+        height={70}
+        className="h-auto w-[140px] object-contain sm:w-[160px]"
+      />
+    </div>
+
+    <p className="text-sm font-semibold tracking-wide text-slate-200">
+      AskQuorum AI
+    </p>
+
+  </div>
+</div>
+
+
             {/* ================= FOLLOW US ================= */}
 
-            <div className="mt-12">
+            <div className="mt-8">
 
               <div className="flex items-center gap-3">
 
