@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -86,31 +87,49 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){window.dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-LN9SGDVNC0');
           `}
         </Script>
-{/* Microsoft Clarity */}
-  <Script id="microsoft-clarity" strategy="afterInteractive">
-    {`
-      (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){
-          (c[a].q=c[a].q||[]).push(arguments)
-        };
-        t=l.createElement(r);
-        t.async=1;
-        t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];
-        y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "yfpykb27x5");
-    `}
-  </Script>
+
+        {/* Microsoft Clarity */}
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){
+                (c[a].q=c[a].q||[]).push(arguments)
+              };
+              t=l.createElement(r);
+              t.async=1;
+              t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];
+              y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "yfpykb27x5");
+          `}
+        </Script>
+
         <Navbar />
 
         {children}
 
         <Footer />
+
+        {/* Existing website chat widget */}
         <AIChatWidget />
+
+        {/* Retell AI voice widget */}
+        <Script
+          id="retell-widget"
+          src="https://dashboard.retellai.com/retell-widget-v2.js"
+          type="module"
+          strategy="afterInteractive"
+          data-voice-public-key="public_key_d47a6de6ed355105d9a68"
+          data-voice-agent-id="agent_560e59a357b68a520b8ad6ef07"
+          data-title="Talk to VrindraTech"
+          data-bot-name="Riya"
+          data-fab-text="Talk to AI"
+          data-color="#4F46E5"
+          data-show-ai-popup="false"
+        />
       </body>
     </html>
   );
