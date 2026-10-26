@@ -18,6 +18,16 @@ body {
   color: #e2e8f0;
 }
 
+body.home-page #retell-widget-root {
+  right: auto !important;
+  left: 24px !important;
+  bottom: 24px !important;
+}
+
+body:not(.home-page) #retell-widget-root {
+  display: none !important;
+}
+
 section {
   padding: 100px 0;
 }

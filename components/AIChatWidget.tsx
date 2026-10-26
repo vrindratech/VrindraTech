@@ -605,7 +605,7 @@ export default function AIChatWidget() {
         }
       `}</style>
 
-      <div className="fixed bottom-4 right-4 z-[9999] flex flex-col items-end font-sans">
+      <div className="fixed bottom-4 left-4 right-auto z-[9999] flex flex-col items-start font-sans">
       {isOpen && (
         <div
           role="dialog"

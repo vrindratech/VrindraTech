@@ -8,12 +8,14 @@ import Testimonials from "@/components/Testimonials";
 import OurWorkProcess from "@/components/OurWorkProcess";
 import OurWork from "@/components/OurWork";
 import FAQ from "@/components/FAQ";
+import HomeVoiceWidget from "@/components/HomeVoiceWidget";
 
 
 
  export default function Home() {
   return (
     <>
+     <HomeVoiceWidget />
      <Hero />
     < Services />
      <TechnologySection />
@@ -26,5 +28,4 @@ import FAQ from "@/components/FAQ";
     </>
   );
 }
-
 
